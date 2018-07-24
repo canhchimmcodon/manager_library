@@ -1,9 +1,17 @@
 en:
   base_title: "The Future Library"
+  
   shared:
     homepage:
       page_title: "Home"
       welcome_message: "Welcome to the Future Library!"
+    _error_messages:
+      error: "error"
+      headf: "The form contains %{s}"
+    _stat:
+      following: "following"
+      follower: "followers"
+
   static_pages:
     home:
       page_title: "Home"
@@ -17,3 +25,27 @@ en:
     contact:
       page_title: "Contact"
       contact_message: "Find us at Framgia Laboratory."
+  
+  users:
+    index:
+      index: "All users"
+    new:
+      signup: "Sign up"
+      re-pas: "Retype password"
+      cr-acc: "Create account"
+    create:
+      message: "Check email to activate!"
+    edit:
+      edit: "Edit account"
+      re-pas: "Retype password"
+      save: "Save"
+    update:
+      updated: "Information is updated."
+    destroy:
+      destroyed: "Account is deleted"
+    show:
+      micropost: "Microposts (%{s})"
+    find_user:
+      notfound: "No account found"
+    logged_in_user:
+      pleaselog: "Please log in!"
