@@ -1,0 +1,22 @@
+<%= form_for @book_support.book_init do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.label :isbn %>
+  <%= f.text_field :isbn, class: "form-control" %>
+
+  <%= f.label :publisher %>
+  <%= f.collection_select :publisher_id, @book_support.publishers,
+    :id, :publisher, include_blank: false %>
+
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, @book_support.categories,
+    :id, :category, include_blank: false %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

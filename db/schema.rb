@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.integer "price"
+    t.string "isbn"
     t.bigint "publisher_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["isbn"], name: "index_books_on_isbn", unique: true
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 

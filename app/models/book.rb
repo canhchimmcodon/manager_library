@@ -5,4 +5,6 @@ class Book < ApplicationRecord
   has_many :authors, through: :author_books
   belongs_to :category
   belongs_to :publisher
+
+  scope :book_info, ->{select :id, :title, :price}
 end

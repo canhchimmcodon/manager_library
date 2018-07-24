@@ -1,6 +1,8 @@
 en:
   base_title: "The Future Library"
-  
+  book: "Book"
+  please_login: "Please login"
+
   shared:
     homepage:
       page_title: "Home"
@@ -25,7 +27,7 @@ en:
     contact:
       page_title: "Contact"
       contact_message: "Find us at Framgia Laboratory."
-  
+
   users:
     index:
       index: "All users"
@@ -51,7 +53,7 @@ en:
       pleaselog: "Please log in!"
 
   sessions:
-    new: 
+    new:
       login: "Login"
       newuser: "New user ?"
       signupnow: "Sign up now!"
@@ -62,7 +64,7 @@ en:
     check_auth:
       message: "Account is not activated. \
         Check email for link acitvate"
-  
+
   _header:
     login: "Login"
     logout: "Logout"
@@ -70,3 +72,15 @@ en:
     account: "Account"
     profile: "Profile"
     setting: "setting"
+
+  books:
+    index:
+      page_title: "Book list"
+      add_book: "Add new book"
+    new:
+      page_title: "Add new book"
+      add_button: "Add new book"
+    show:
+      not_exists: "Book not exists!"
+    create:
+      success: "Add new book successfully"
