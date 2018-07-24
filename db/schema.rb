@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "remember_digest"
     t.string "contact"
     t.integer "gender"
     t.string "first_name"

@@ -49,3 +49,24 @@ en:
       notfound: "No account found"
     logged_in_user:
       pleaselog: "Please log in!"
+
+  sessions:
+    new: 
+      login: "Login"
+      newuser: "New user ?"
+      signupnow: "Sign up now!"
+      remember: "Remember me in this computer"
+      forpas: "Forgot password"
+    create:
+      invalid: "Invalid username or password"
+    check_auth:
+      message: "Account is not activated. \
+        Check email for link acitvate"
+  
+  _header:
+    login: "Login"
+    logout: "Logout"
+    user: "User"
+    account: "Account"
+    profile: "Profile"
+    setting: "setting"
