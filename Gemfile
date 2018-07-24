@@ -8,6 +8,7 @@ ruby "2.5.1"
 gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap"
+gem "bootstrap-will_paginate"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
@@ -21,6 +22,7 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate"
+gem "will_paginate-bootstrap4"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)

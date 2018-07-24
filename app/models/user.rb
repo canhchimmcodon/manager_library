@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :notifications
 
+  scope :all_user, ->{select :id, :name, :email}
+  
   before_save{email.downcase!}
   validates :name, presence: true,
     length: {maximum: Settings.MAX_NAME_LENGTH}
@@ -33,6 +35,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def current_user? user
+    self == user
   end
 
   def remember
