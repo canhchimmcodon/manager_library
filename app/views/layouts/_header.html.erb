@@ -1,0 +1,11 @@
+<header class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to t("base_title"), root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item"><%= link_to t("static_pages.home.page_title"), root_path, class: "nav-link active" %></li>
+        <li class="nav-item"><%= link_to t("static_pages.help.page_title"), help_path, class: "nav-link active" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
