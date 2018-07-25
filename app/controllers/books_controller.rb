@@ -4,8 +4,8 @@ class BooksController < ApplicationController
   before_action :find_book, only: %i(show edit update destroy)
 
   def index
-    @books = Book.book_info.paginate(page: params[:page],
-      per_page: Settings.BOOK_PER_PAGE)
+    @books = Book.book_info.paginate page: params[:page],
+      per_page: Settings.BOOK_PER_PAGE
   end
 
   def new

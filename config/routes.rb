@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   get "/newbook", to: "books#new"
   post "/newbook", to: "books#create"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users
   resources :books
 end
