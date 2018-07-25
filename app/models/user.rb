@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  enum role: {admin: 0, librarian: 1, user: 2}
 
   has_one :card
   has_many :comments
