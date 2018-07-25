@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
 
+  get "auth/:provider/callback", to: "omniauth_callbacks#create"
+  get "auth/failure", to: "omniauth_callbacks#failure"
+
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
 

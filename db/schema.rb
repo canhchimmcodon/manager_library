@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_093347) do
+ActiveRecord::Schema.define(version: 2018_07_25_075128) do
 
   create_table "author_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "author_id"
@@ -32,13 +32,11 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.integer "price"
-    t.string "isbn"
     t.bigint "publisher_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_books_on_category_id"
-    t.index ["isbn"], name: "index_books_on_isbn", unique: true
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
@@ -119,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
     t.boolean "card_pending", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   scope :all_user, ->{select :id, :name, :email}
 
+  paginates_per Settings.OBJECT_PER_PAGE
+
   before_save{email.downcase!}
   validates :name, presence: true,
     length: {maximum: Settings.MAX_NAME_LENGTH}
@@ -23,6 +25,21 @@ class User < ApplicationRecord
     allow_nil: true
 
   class << self
+    def from_omniauth auth
+      where(provider: auth.provider,
+        uid: auth.uid).first_or_initialize.tap do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.password = SecureRandom.hex(8) if user.new_record?
+        user.name = auth.info.name
+        user.save
+        user
+      end
+    end
+
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
                BCrypt::Engine::MIN_COST
