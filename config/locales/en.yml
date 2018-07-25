@@ -79,6 +79,7 @@ en:
       remember: "Remember me in this computer"
       forgot_password: "Forgot password"
       sign_in_google: "Sign in with Google"
+      sign_in_facebook: "Sign in with Facebook"
     create:
       invalid: "Invalid username or password"
     check_auth:
