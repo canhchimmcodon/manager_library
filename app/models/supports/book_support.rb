@@ -1,8 +1,4 @@
 class Supports::BookSupport
-  def book_init
-    @book = Book.new
-  end
-
   def publishers
     @publishers ||= Publisher.all.by_name
   end

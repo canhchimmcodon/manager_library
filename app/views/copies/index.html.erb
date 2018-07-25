@@ -1,0 +1,8 @@
+<% provide :title, t(".page_title") %>
+<h1><%= t ".page_title" %></h1>
+<ul class="copies">
+  <%= render @copies %>
+</ul>
+<br>
+<%= link_to t(".add_copy"), new_copy_path %>
+<%= paginate @copies %>

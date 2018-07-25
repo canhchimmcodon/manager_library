@@ -1,4 +1,4 @@
-<%= form_for @book_support.book_init do |f| %>
+<%= form_for book do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
   <%= f.label :title %>
@@ -12,11 +12,11 @@
 
   <%= f.label :publisher %>
   <%= f.collection_select :publisher_id, @book_support.publishers,
-    :id, :publisher, include_blank: false %>
+    :id, :name, include_blank: false %>
 
   <%= f.label :category %>
   <%= f.collection_select :category_id, @book_support.categories,
-    :id, :category, include_blank: false %>
+    :id, :name, include_blank: false %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

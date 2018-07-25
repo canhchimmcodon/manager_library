@@ -9,7 +9,7 @@ User.create!(name: "Librarian",
   password: "111111",
   password_confirmation: "111111",
   role: 1)
-    
+
 10.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
@@ -32,14 +32,14 @@ end
 
 10.times do |n|
   category = Faker::Book.genre
-  Category.create!(category: category)
+  Category.create!(name: category)
 end
 
 10.times do |n|
   publisher = Faker::Book.publisher
   address = Faker::Address.full_address
   phone = Faker::PhoneNumber.cell_phone
-  Publisher.create!(publisher: publisher,
+  Publisher.create!(name: publisher,
     address: address,
     phone: phone)
 end

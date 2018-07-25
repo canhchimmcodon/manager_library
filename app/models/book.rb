@@ -7,4 +7,8 @@ class Book < ApplicationRecord
   belongs_to :publisher
 
   scope :book_info, ->{select :id, :title, :price}
+  delegate :name, to: :publisher, prefix: true, allow_nil: true
+  delegate :name, to: :category, prefix: true, allow_nil: true
+
+  validates :isbn, presence: true, uniqueness: true
 end
