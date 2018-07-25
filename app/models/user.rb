@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :card_activation_token
   enum role: {admin: 0, librarian: 1, user: 2}
 
-  has_one :card
+  has_one :card, dependent: :destroy
   has_many :comments
   has_many :notifications
 
@@ -11,6 +11,7 @@ class User < ApplicationRecord
   paginates_per Settings.OBJECT_PER_PAGE
 
   before_save{email.downcase!}
+  validates :terms_of_service, acceptance: {accept: true}
   validates :name, presence: true,
     length: {maximum: Settings.MAX_NAME_LENGTH}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -63,12 +64,18 @@ class User < ApplicationRecord
     update_attributes remember_digest: User.digest(remember_token)
   end
 
-  def authenticated? remember_token
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def create_card_token
+    self.card_activation_token = User.new_token
+    self.card_activation_digest = User.digest(card_activation_token)
   end
 end

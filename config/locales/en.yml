@@ -50,13 +50,14 @@ en:
     edit:
       edit: "Edit account"
       save: "Save"
-
     update:
       updated: "Information is updated."
     destroy:
       destroyed: "Account is deleted"
     show:
       micropost: "Microposts (%{s})"
+      wait: "Waiting for mail acpetion"
+      register: "Register"
     find_user:
       notfound: "No account found"
     logged_in_user:
@@ -64,6 +65,11 @@ en:
     _user:
       delete: "Delete"
       sure: "Are you sure ?"
+    require_card:
+      check_mail: "Check mail to activate card!"
+    register_card:
+      register: "Register"
+      agree: "I agree"
 
   sessions:
     new:
@@ -140,3 +146,25 @@ en:
     create:
       failed: Authentication failure"
       success: "Sign in with %{s}"
+
+  card_activations:
+    edit:
+      card_activated: "Card activated!"
+      invalid_link: "Invalid activation link"
+      failed_create_card: "Failed in card creation"
+      
+  user_mailer:
+    account_activation:
+      hi: "Hi,"
+      message: "Click here to active"
+      account_activated: "Account is activated"
+      activate: "Activate"
+    card_activation:
+      subject: "Card activation"
+    password_reset:
+      pasres: "Password reset"
+      reset_pass: "Reset password"
+      text1: "To reset your password click the link below:"
+      text2: "This link will expire in two hours."
+      text3: "If you did not request your password to be reset, please \
+        ignore this email and your password will stay as it is."

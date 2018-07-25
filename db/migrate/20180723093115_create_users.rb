@@ -9,8 +9,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.column :gender, :integer
       t.string :first_name
       t.string :last_name
+      t.column :terms_of_service, :boolean
       t.column :role, :integer, default: 2
-      t.column :card_pending, :boolean, default: false
 
       t.timestamps
     end

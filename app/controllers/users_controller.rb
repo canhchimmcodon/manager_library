@@ -42,6 +42,17 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def register_card; end
+
+  def require_card
+    unless current_user.card_activated?
+      current_user.create_card_token
+      current_user.terms_of_service = params[:user][:terms_of_service]
+      send_mail_card_activation current_user
+    end
+    redirect_to current_user
+  end
+
   private
 
   def user_params
@@ -69,5 +80,14 @@ class UsersController < ApplicationController
 
   def correct_user
     redirect_to root_url unless current_user.current_user? @user
+  end
+
+  def send_mail_card_activation user
+    if user.save
+      UserMailer.card_activation(user).deliver_now
+      flash[:info] = t "users.require_card.check_mail"
+    else
+      flash[:danger] = user.errors.full_messages.join
+    end
   end
 end
