@@ -72,6 +72,7 @@ en:
       signupnow: "Sign up now!"
       remember: "Remember me in this computer"
       forpas: "Forgot password"
+      sign_in_google: "Sign in with Google"
     create:
       invalid: "Invalid username or password"
     check_auth:
@@ -134,3 +135,8 @@ en:
     copy:
       delete: "Delete"
       confirm: "Are you sure?"
+
+  omniauth_callbacks:
+    create:
+      failed: Authentication failure"
+      success: "Sign in with %{s}"
