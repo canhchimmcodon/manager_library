@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :notifications
 
   scope :all_user, ->{select :id, :name, :email}
-  
+
   before_save{email.downcase!}
   validates :name, presence: true,
     length: {maximum: Settings.MAX_NAME_LENGTH}

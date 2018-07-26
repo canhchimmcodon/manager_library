@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "category"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_07_23_093347) do
   end
 
   create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "publisher"
+    t.string "name"
     t.string "address"
     t.string "phone"
     t.datetime "created_at", null: false

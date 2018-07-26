@@ -2,14 +2,14 @@ class BooksController < ApplicationController
   before_action :logged_in_user, :librarian_user,
     only: %i(new create edit update destroy)
   before_action :find_book, only: %i(show edit update destroy)
+  before_action :book_support, only: %i(new edit create)
 
   def index
-    @books = Book.book_info.paginate page: params[:page],
-      per_page: Settings.BOOK_PER_PAGE
+    @books = Book.page(params[:page]).per(Settings.BOOK_PER_PAGE)
   end
 
   def new
-    @book_support = Supports::BookSupport.new
+    @book = Book.new
   end
 
   def create
@@ -26,9 +26,20 @@ class BooksController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @book.update_attributes(book_params)
+      flash[:success] = t ".book_updated"
+      redirect_to @book
+    else
+      render :edit
+    end
+  end
 
-  def destroy; end
+  def destroy
+    @book.destroy
+    flash[:success] = t ".book_deleted"
+    redirect_to books_url
+  end
 
   private
 
@@ -46,5 +57,9 @@ class BooksController < ApplicationController
     return if @book
     flash[:danger] = t ".not_exists"
     redirect_to root_url
+  end
+
+  def book_support
+    @book_support = Supports::BookSupport.new
   end
 end

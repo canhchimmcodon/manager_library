@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/newbook", to: "books#new"
-  post "/newbook", to: "books#create"
-
   resources :users
   resources :books
+  resources :copies, only: %i(index new create update destroy)
 end

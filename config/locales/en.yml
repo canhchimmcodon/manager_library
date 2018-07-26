@@ -50,7 +50,7 @@ en:
     edit:
       edit: "Edit account"
       save: "Save"
-      
+
     update:
       updated: "Information is updated."
     destroy:
@@ -95,5 +95,42 @@ en:
       add_button: "Add new book"
     show:
       not_exists: "Book not exists!"
+      price: "Price"
+      isbn: "ISBN"
+      publisher: "Publisher"
+      category: "Category"
     create:
       success: "Add new book successfully"
+    edit:
+      page_title: "Update book"
+      save_changes: "Save changes"
+    update:
+      book_updated: "Book has been updated!"
+    destroy:
+      book_deleted: "Book has been deleted!"
+    book:
+      edit: "Edit"
+      delete: "Delete"
+      copies: "Copies"
+      confirm: "Are you sure?"
+
+  copies:
+    form:
+      new_book_message: "You want to create new book instead?"
+      create_new_book: "Create new book here"
+    index:
+      page_title: "List copies"
+      add_copy: "Add new copy"
+      not_exists: "No copies exists!"
+    new:
+      page_title: "Add new copy"
+      add_button: "Add new copy"
+    updated:
+      copy_updated: "Copy has been updated!"
+    create:
+      success: "Add new book successfully"
+    destroy:
+      copy_deleted: "Copy has been deleted!"
+    copy:
+      delete: "Delete"
+      confirm: "Are you sure?"

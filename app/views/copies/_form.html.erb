@@ -1,0 +1,11 @@
+<%= form_for @copy do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :book %>
+  <%= f.collection_select :book_id, @copy_support.books,
+    :id, :title, include_blank: false %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+
+  <%= t ".new_book_message" %>
+  <%= link_to t(".create_new_book"), new_book_path %>
+<% end %>
