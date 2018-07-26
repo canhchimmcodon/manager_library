@@ -6,8 +6,7 @@ class CopiesController < ApplicationController
 
   def index
     @book = Book.find(params[:book_id])
-    @copies = @book.copies.paginate page: params[:page],
-      per_page: Settings.BOOK_PER_PAGE
+    @copies = @book.copies.page(params[:page])
     return if @copies
     flash[:danger] = t ".not_exists"
     redirect_to root_url

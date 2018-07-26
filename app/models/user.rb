@@ -25,6 +25,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.MIN_PASSWORD_LENGTH},
     allow_nil: true
 
+  delegate :id, to: :card, prefix: true, allow_nil: true
+
   class << self
     def from_omniauth auth
       where(provider: auth.provider,

@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :books
   resources :copies, only: %i(index new create update destroy)
   resources :card_activations, only: %i(edit)
+  resources :registered_copies, only: %i(new create update)
 end

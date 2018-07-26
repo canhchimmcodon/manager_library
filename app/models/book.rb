@@ -10,5 +10,17 @@ class Book < ApplicationRecord
   delegate :name, to: :publisher, prefix: true, allow_nil: true
   delegate :name, to: :category, prefix: true, allow_nil: true
 
+  validates :title, presence: true
+  validates :price, presence: true
   validates :isbn, presence: true, uniqueness: true
+
+  paginates_per Settings.BOOK_PER_PAGE
+
+  def copies_available_count
+    copies.available_copies.count
+  end
+
+  def random_copies_available
+    copies.available_copies.sample
+  end
 end

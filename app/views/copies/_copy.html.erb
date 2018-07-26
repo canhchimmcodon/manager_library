@@ -1,5 +1,7 @@
 <li>
-  <%= copy.id %> <%= copy.book_id %>
+  <%= copy.id %>
+  <%= copy.book_id %>
+  <%= copy.status %>
   <% if current_user.librarian? %>
     <%= link_to t(".delete"), copy, method: :delete,
       data: {confirm: t(".confirm")} %>

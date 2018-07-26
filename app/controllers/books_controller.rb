@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   before_action :book_support, only: %i(new edit create)
 
   def index
-    @books = Book.page(params[:page]).per(Settings.BOOK_PER_PAGE)
+    @books = Book.page(params[:page]).book_info
   end
 
   def new
