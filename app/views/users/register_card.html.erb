@@ -1,0 +1,8 @@
+<%= form_for current_user, url: register_path do |f| %>
+  <%= f.label :terms_of_service, class: "checkbox inline" do %>
+  <%= f.check_box :terms_of_service %>
+    <span><%= t ".remember" %></span>
+  <% end %>
+
+  <%= f.submit t(".register"), class: "btn btn-primary" %>
+<% end %>
