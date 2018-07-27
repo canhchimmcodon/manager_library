@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_063551) do
-
+ActiveRecord::Schema.define(version: 2018_07_26_115159) do
   create_table "author_books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "author_id"
     t.bigint "book_id"
@@ -123,6 +122,8 @@ ActiveRecord::Schema.define(version: 2018_07_26_063551) do
     t.string "uid"
     t.string "card_activation_digest"
     t.boolean "card_activated", default: false
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
