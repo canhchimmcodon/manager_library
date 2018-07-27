@@ -152,7 +152,7 @@ en:
       card_activated: "Card activated!"
       invalid_link: "Invalid activation link"
       failed_create_card: "Failed in card creation"
-      
+
   user_mailer:
     account_activation:
       hi: "Hi,"
@@ -168,3 +168,14 @@ en:
       text2: "This link will expire in two hours."
       text3: "If you did not request your password to be reset, please \
         ignore this email and your password will stay as it is."
+
+  registered_copies:
+    new:
+      page_title: "Register book"
+      not_exists: "Book not exists!"
+      register_button: "Registered book"
+      issued_date: "Card issued date: "
+      expired_date: "Card expired date: "
+      available_count: "Copies available for this book: "
+    create:
+      success: "Registered success. Waiting for librarian's confirmation."

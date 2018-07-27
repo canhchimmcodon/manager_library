@@ -43,3 +43,7 @@ end
     address: address,
     phone: phone)
 end
+
+Card.create!(issued_date: Date.parse("2018-07-25"),
+  expired_date: Date.parse("2019-01-02"),
+  user_id: 3)

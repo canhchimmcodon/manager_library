@@ -1,0 +1,32 @@
+<% provide :title, t(".page_title") %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= form_for @registered_copy do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <h1><%= current_user.name %></h1>
+      <h6><%= t ".issued_date" %><%= current_user.card.issued_date %></h6>
+      <h6><%= t ".expired_date" %><%= current_user.card.expired_date %></h6>
+      <h6><%= t ".title" %><%= @book.title %></h6>
+      <h6><%= t ".publisher" %><%= @book.publisher_name %></h6>
+      <h6><%= t ".category" %><%= @book.category_name %></h6>
+      <h6><%= t ".price" %><%= @book.price %></h6>
+      <h6><%= t ".available_count" %><%= @book.copies_available_count %></h6>
+
+      <%= f.label :registered_date %>
+      <%= f.text_field :registered_date, readonly: true, class: "form-control" %>
+
+      <%= f.label :card_id %>
+      <%= f.text_field :card_id, readonly: true, class: "form-control" %>
+
+      <%= f.label :copy_id %>
+      <%= f.text_field :copy_id, readonly: true, class: "form-control" %>
+
+      <%= f.submit t(".register_button"), class: "btn btn-primary" %>
+
+      <% end %>
+
+    </section>
+  </aside>
+</div>
