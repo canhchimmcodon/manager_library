@@ -16,6 +16,10 @@ class Book < ApplicationRecord
 
   paginates_per Settings.BOOK_PER_PAGE
 
+  def copies_available
+    copies.available_copies
+  end
+
   def copies_available_count
     copies.available_copies.count
   end

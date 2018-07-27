@@ -93,6 +93,7 @@ en:
     account: "Account"
     profile: "Profile"
     setting: "Setting"
+    borrowed_book: "Borrowed book"
 
   books:
     index:
@@ -172,6 +173,12 @@ en:
         ignore this email and your password will stay as it is."
 
   registered_copies:
+    registered_copy:
+      return: "Return this book"
+      confirm: "Are you sure?"
+    index:
+      page_title: "Registered Copies"
+      no_card: "Register a card first."
     new:
       page_title: "Register book"
       not_exists: "Book not exists!"
@@ -179,9 +186,14 @@ en:
       issued_date: "Card issued date: "
       expired_date: "Card expired date: "
       available_count: "Copies available for this book: "
+      no_card: "Register a card first."
     create:
       success: "Registered success. Waiting for librarian's confirmation."
-  
+      status_fail: "Set status failed"
+    destroy:
+      book_returned: "Book has been returned."
+      status_fail: "Set status failed"
+
   password_resets:
     new:
       submit: "Submit"
@@ -196,4 +208,4 @@ en:
     update:
       message: "Password has been reset."
     check_expiration:
-      expi: "Password reset has expired." 
+      expi: "Password reset has expired."

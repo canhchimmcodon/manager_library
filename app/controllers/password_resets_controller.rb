@@ -4,7 +4,7 @@ class PasswordResetsController < ApplicationController
 
   def new; end
 
-  def create 
+  def create
     @user = User.find_by email: params[:password_reset][:email].downcase
     if @user
       @user.create_reset_digest
@@ -43,7 +43,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def valid_user
-    return true if @user && @user.authenticated?(:reset, params[:id])
+    return true if @user&.authenticated?(:reset, params[:id])
     redirect_to root_url
   end
 
