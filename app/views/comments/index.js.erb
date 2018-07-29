@@ -1,0 +1,4 @@
+$('.comments').append('<%= j render @comments %>');
+$('#load-more-button').attr('href','<%= book_comments_path(@book.id, 
+  page: params[:page].to_i + 1) %>')
+  

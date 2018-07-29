@@ -5,11 +5,9 @@
       <h1>
         <%= @user.name %>
       </h1>
-      <% if @user.user? %>
+      <% if @user.user? && current_user.current_user?(@user) %>
         <% if !@user.card_activated? %>
           <%= link_to t(".register"), register_path %>
-        <% else %>
-          <%= t ".wait" %>
         <% end %>
       <% end %>
     </section>
