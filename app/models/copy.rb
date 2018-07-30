@@ -8,4 +8,8 @@ class Copy < ApplicationRecord
   scope :available_copies, ->{where status: :available}
 
   paginates_per Settings.BOOK_PER_PAGE
+
+  def set_status new_status
+    update_attributes status: new_status
+  end
 end
