@@ -1,0 +1,5 @@
+<% provide :title, t(".page_title") %>
+<h1><%= t ".page_title" %></h1>
+<ul class="book_confirmations">
+  <%= render partial: "book_confirmation", collection: @book_confirmations %>
+</ul>

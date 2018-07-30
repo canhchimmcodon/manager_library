@@ -1,0 +1,37 @@
+class BookConfirmationsController < ApplicationController
+  before_action :has_book_pending?, only: %i(index)
+  before_action :find_registered_copy, only: %i(update)
+
+  def index; end
+
+  def update
+    if @book_confirmation.update_attributes(borrowed: true)
+      add_book_duration
+      flash[:success] = t ".updated"
+    else
+      flash[:danger] = t ".failed"
+    end
+    redirect_to root_url
+  end
+
+  private
+
+  def has_book_pending?
+    @book_confirmations = RegisteredCopy.page(params[:page]).not_confirmed_yet
+    return if @book_confirmations
+    flash[:danger] = t ".no_book_pending_right_now"
+    redirect_to root_url
+  end
+
+  def find_registered_copy
+    @book_confirmation = RegisteredCopy.find_by id: params[:id]
+    return if @book_confirmation
+    flash[:danger] = t ".not_exists"
+    redirect_to root_url
+  end
+
+  def add_book_duration
+    @book_confirmation.update_attributes(borrowed_date: Date.today,
+      expected_return_date: Settings.EXPIRED_WEEK.weeks.from_now.to_date)
+  end
+end

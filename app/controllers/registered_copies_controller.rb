@@ -2,6 +2,7 @@ class RegisteredCopiesController < ApplicationController
   before_action :find_book, only: %i(new)
   before_action :find_registered_copy, only: %i(destroy)
   before_action :has_card?, only: %i(index new)
+  before_action :can_borrow, only: %i(create)
 
   def index
     @registered_copies = current_user.card.registered_copies.page(params[:page])
@@ -82,5 +83,12 @@ class RegisteredCopiesController < ApplicationController
     return if current_user.card
     flash[:danger] = t ".no_card"
     redirect_to root_url
+  end
+
+  def can_borrow
+    return if current_user.card.can_borrow
+    flash[:danger] = t(".cannot_borrow", count:
+      current_user.card.registered_copies_count)
+    redirect_to registered_copies_path
   end
 end
