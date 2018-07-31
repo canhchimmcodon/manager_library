@@ -94,6 +94,10 @@ en:
     profile: "Profile"
     setting: "Setting"
     borrowed_book: "Borrowed book"
+    confirm: "Confirm"
+    comment_confirm: "Confirm comments"
+    book_confirm: "Confirm books"
+    notifications: "Notifications"
 
   books:
     index:
@@ -110,6 +114,8 @@ en:
       category: "Category"
     create:
       success: "Add new book successfully"
+      notification_book_created: "Book %{title} has been successfully \
+        added to library."
     edit:
       page_title: "Update book"
       save_changes: "Save changes"
@@ -190,6 +196,8 @@ en:
     create:
       success: "Registered success. Waiting for librarian's confirmation."
       status_fail: "Set status failed"
+      cannot_borrow: "Can't borrow anymore, \
+        you has been borrowed %{count} book(s)."
     destroy:
       book_returned: "Book has been returned."
       status_fail: "Set status failed"
@@ -209,3 +217,24 @@ en:
       message: "Password has been reset."
     check_expiration:
       expi: "Password reset has expired."
+
+  book_confirmations:
+    book_confirmation:
+      confirm: "Confirm"
+      confirm_text: "Are you sure to confirm this book?"
+    index:
+      page_title: "List of pending books"
+    update:
+      updated: "Book has been confirmed."
+      failed: "Confirmation failure."
+
+  notifications:
+    notification:
+      timestamp: "Posted %{time} ago."
+      delete: "Delete"
+      confirm: "Are you sure?"
+    index:
+      page_title: "Notifications"
+    destroy:
+      notification_deleted: "Notification deleted."
+      not_exists: "Notification not exists."

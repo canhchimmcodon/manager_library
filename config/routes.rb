@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resources :card_activations, only: %i(edit)
   resources :password_resets, only: %i(new create edit update)
   resources :registered_copies, only: %i(index new create update destroy)
+  resources :book_confirmations, only: %i(index update)
+  resources :notifications, only: %i(index create destroy)
 end

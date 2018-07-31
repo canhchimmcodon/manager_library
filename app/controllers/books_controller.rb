@@ -16,6 +16,8 @@ class BooksController < ApplicationController
     @book = Book.new book_params
     if @book.save
       flash[:info] = t ".success"
+      add_notification_current_user t(".notification_book_created",
+        title: @book.title)
       redirect_to root_url
     else
       render :new
