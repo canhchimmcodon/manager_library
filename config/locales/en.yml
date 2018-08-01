@@ -112,6 +112,7 @@ en:
       isbn: "ISBN"
       publisher: "Publisher"
       category: "Category"
+      load_more: "Load more"
     create:
       success: "Add new book successfully"
       notification_book_created: "Book %{title} has been successfully \
@@ -128,6 +129,8 @@ en:
       delete: "Delete"
       copies: "Copies"
       confirm: "Are you sure?"
+    _comment_form:
+      comment: "Comment"
 
   copies:
     form:
@@ -238,3 +241,27 @@ en:
     destroy:
       notification_deleted: "Notification deleted."
       not_exists: "Notification not exists."
+
+  comments:
+    create:
+      failed_comment: "Comment failed!"
+      success_comment: "Comment successed!"
+    edit:
+      edit: "Edit comment"
+      save: "Save"
+    update:
+      updated: "Update success"
+      failed_update: "Update failed"
+    destroy:
+      destroyed: "Comment is deleted"
+    find_book:
+      not_found_book: "Can not find book!"
+    find_comment:
+      not_found_comment: "Can not find comment!"
+    _comment:
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
+      submitted: "Submitted %{s} ago."
+    _edit_form:
+      save: "Save"

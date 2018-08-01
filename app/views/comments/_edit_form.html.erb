@@ -1,0 +1,5 @@
+<div id="edit-comment-form">
+<%= form_for [@book, @comment], remote: true do |f| %>
+  <%= f.text_field :content, class: "form-control" %>
+<% end %>
+</div>

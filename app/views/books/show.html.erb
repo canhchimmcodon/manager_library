@@ -16,3 +16,20 @@
     </section>
   </aside>
 </div>
+<div>
+  <% if logged_in? %>
+    <%= render partial: "comments/comment_form" %>
+  <% end %>
+
+  <div class="container">
+    <ul class="comments">
+      <%= render @book.comments.page 1 %>
+    </ul>
+  </div>
+
+  <div class="load-more-container">
+    <%= link_to t(".load_more"), 
+      book_comments_path(@book.id, page: 2),
+      id: "load-more-button", remote: true %>
+  </div>
+</div>

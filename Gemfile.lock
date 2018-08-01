@@ -131,6 +131,8 @@ GEM
     hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.0.11)
+      i18n (>= 0.6.6, < 2)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -309,6 +311,7 @@ DEPENDENCIES
   config
   faker
   figaro
+  i18n-js
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
