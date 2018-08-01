@@ -1,60 +1,74 @@
-<header class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to t("base_title"), root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item"><%= link_to t("static_pages.home.page_title"),
-          root_path, class: "nav-link active" %></li>
-        <li class="nav-item"><%= link_to t("static_pages.help.page_title"),
-          help_path, class: "nav-link active" %></li>
-        <li class="nav-item"><%= link_to t("book"), books_path, class: "nav-link active" %></li>
-        <% if logged_in? %>
+<header class="rh">
+  <!-- ========== Nav Menu ========== -->
+  <nav class="rh navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="javascript:;">
+          <%= image_tag "logo" %>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse rh-toggle" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right main-navbar">
           <li>
-            <%= link_to t("_header.notifications"),
-              notifications_path, class: "nav-link active" %>
+            <%= link_to t("static_pages.home.page_title"), root_path %>
           </li>
           <li>
+              <%= link_to t("static_pages.help.page_title"), help_path %>
+          </li>
+          <li>
+              <%= link_to t("book"), books_path %>
+          </li>
+          
+          <% if logged_in? %>
+          <li>
+            <%= link_to t("_header.notifications"), notifications_path %>
+          </li>
             <% if current_user.user? %>
-              <%= link_to t("_header.borrowed_book"),
-                registered_copies_path, class: "nav-link active" %>
+              <li>
+                <%= link_to t("_header.borrowed_book"), registered_copies_path %>
+              </li>
             <% end %>
+            <% if current_user.librarian? %>
+              <li>
+                <a href="javascript:;"><%= t "_header.confirm" %></a>
+                <ul class="dropdown-nav rh-drop-menu">
+                  <li>
+                    <%= link_to t("_header.book_confirm"), book_confirmations_path %>
+                  </li>
+                  <li>
+                    <%= link_to t("_header.comment_confirm"), "#" %>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          <li>
+            <%= link_to t("_header.user"), users_path %>
           </li>
-          <li><%= link_to t("_header.user"),
-            users_path, class: "nav-link active" %></li>
-          <% if current_user.librarian? %>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle"
-                data-toggle="dropdown">
-                <%= t "_header.confirm" %><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to t("_header.book_confirm"),
-                  book_confirmations_path, class: "dropdown-item" %></li>
-                <li><%= link_to t("_header.comment_confirm"),
-                  "#", class: "dropdown-item" %></li>
-              </ul>
-            </li>
-          <% end %>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle"
-              data-toggle="dropdown">
-              <%= t "_header.account" %><b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to t("_header.profile"),
-                current_user, class: "dropdown-item" %></li>
-              <li><%= link_to t("_header.setting"),
-                edit_user_path(current_user), class: "dropdown-item" %></li>
+          <li>
+            <a href="javascript:;"><%= t "_header.account" %></a>
+            <ul class="dropdown-nav rh-drop-menu">
+              <li>
+                <%= link_to t("_header.profile"), current_user %>
+              </li>
+              <li>
+                <%= link_to t("_header.setting"), edit_user_path(current_user) %>
+              </li>
               <li class="divider"></li>
-              <li><%= link_to t("_header.logout"),
-                  logout_path, method: :delete, class: "dropdown-item" %></li>
+              <li>
+                <%= link_to t("_header.logout"), logout_path, method: :delete %>
+              </li>
             </ul>
           </li>
-        <% else %>
-          <li><%= link_to t("_header.login"),
-            login_path, class: "nav-link active" %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
+          <% else %>
+          <li>
+            <%= link_to t("_header.login"), login_path %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>

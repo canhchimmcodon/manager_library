@@ -23,11 +23,11 @@ class CommentsController < ApplicationController
     if @comment.save
       respond_to do |format|
         format.html do
-          flash[:success] = t ".success_comment"   
+          flash[:success] = t ".success_comment"
           redirect_to @book
         end
         format.js
-      end  
+      end
     end
   end
 
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
     if @comment.update_attributes(comment_params)
       respond_to do |format|
         format.html do
-          flash[:success] = t ".updated"   
+          flash[:success] = t ".updated"
           redirect_to @book
         end
         format.js

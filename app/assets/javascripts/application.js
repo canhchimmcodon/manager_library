@@ -10,11 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
+//
 //= require rails-ujs
 //= require jquery
 //= require bootstrap
 //= require activestorage
 //= require turbolinks
+//
+//= require jquery.min
+//= require bootstrap.min
+//= require bootstrap-select
+//= require bootstrap-datepicker
+//= require jquery-ui-date
+//= require jquery-ui
+//= require slick.min
+//= require moment.min
+//= require fullcalendar
+//= require form-wizard
+//= require themefunction
+//
 //= require i18n
 //= require i18n.js
 //= require i18n/translations

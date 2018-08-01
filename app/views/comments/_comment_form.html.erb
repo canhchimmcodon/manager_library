@@ -1,5 +1,9 @@
-<%= form_for [@book, Comment.new], remote: true do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content, class: "form-control"%>
-  <%= f.submit t("books._comment_form.comment"), class: "btn btn-primary"%>
+<%= form_for [@book, Comment.new], class: "submit-form pull-left", 
+  remote: true do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, size: "20x5", class: "form-control"%>
+  </div>
+  <div class="submit pull-right">
+    <%= f.submit t("books._comment_form.comment"), class: "btn btn-primary"%>
+  </div>
 <% end %>

@@ -1,191 +1,62 @@
-@import 'bootstrap';
-@import 'color';
+@import 'colorX';
 
-/* mixins, variables, etc. */
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.rh-footer {
+  margin-top: 100px;
 }
 
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-/* universal */
-
-body {
-  /*padding-top: 60px;*/
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-
-  h1 {
-    margin-bottom: 10px;
+.books a {
+  color: $gray;
+  :hover {
+    color: $pink-light;
   }
 }
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+.user-single a {
+  color: $gray;
+  :hover {
+    color: $pink-light;
+  }
 }
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $light-gray;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-/* header */
-
-#logo {
+.user-single img {
   float: left;
   margin-right: 10px;
-  font-size: 1em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
+  width: 8%;
+}
 
-  &:hover {
-    color: pink;
-    text-decoration: none;
+.help-page a {
+  color: $blue;
+  :hover {
+    color: $pink-light;
   }
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $light-gray;
-
-  a {
-    color: gray;
-
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-
-  small {
-    float: left;
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-
-    li {
-      float: left;
-      margin-left: 15px;
-    }
+.add-new-book a {
+  color: $blue;
+  :hover {
+    color: $pink-light;
   }
 }
 
-/* sidebar */
-
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
+.notifications a {
+  color: $blue;
+  :hover {
+    color: $pink-light;
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
+.page-item a {
+  color: $gray;
 }
 
-.gravatar_edit {
-  margin-top: 15px;
+.sign-up-now a {
+  color: $blue;
 }
 
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid $gray1;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
+.sign-in-social-newtwork a {
+  color: $blue;
 }
 
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
+.register-card a {
+  color: $blue;
 }
 
 .users {
@@ -194,6 +65,28 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $light-gray;
   }
+}
+
+.book-quote {
+  font-size: 20px;
+}
+
+.record img {
+  float: left;
+  margin-right: 10px;
+  width: 8%;
+}
+
+.comments {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+  }
+}
+
+.load-more-container a {
+  color: $gray;
 }
