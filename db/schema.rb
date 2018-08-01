@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_26_115159) do
+ActiveRecord::Schema.define(version: 2018_08_02_085722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2018_07_26_115159) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "summary"
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["isbn"], name: "index_books_on_isbn", unique: true
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
@@ -131,15 +132,15 @@ ActiveRecord::Schema.define(version: 2018_07_26_115159) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "author_books", "authors"
-  add_foreign_key "author_books", "books"
-  add_foreign_key "books", "categories"
-  add_foreign_key "books", "publishers"
-  add_foreign_key "cards", "users"
-  add_foreign_key "comments", "books"
-  add_foreign_key "comments", "users"
-  add_foreign_key "copies", "books"
-  add_foreign_key "notifications", "users"
-  add_foreign_key "registered_copies", "cards"
-  add_foreign_key "registered_copies", "copies"
+  add_foreign_key "author_books", "authors", on_delete: :cascade
+  add_foreign_key "author_books", "books", on_delete: :cascade
+  add_foreign_key "books", "categories", on_delete: :cascade
+  add_foreign_key "books", "publishers", on_delete: :cascade
+  add_foreign_key "cards", "users", on_delete: :cascade
+  add_foreign_key "comments", "books", on_delete: :cascade
+  add_foreign_key "comments", "users", on_delete: :cascade
+  add_foreign_key "copies", "books", on_delete: :cascade
+  add_foreign_key "notifications", "users", on_delete: :cascade
+  add_foreign_key "registered_copies", "cards", on_delete: :cascade
+  add_foreign_key "registered_copies", "copies", on_delete: :cascade
 end
