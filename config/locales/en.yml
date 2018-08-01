@@ -150,6 +150,8 @@ en:
       copy_updated: "Copy has been updated!"
     create:
       success: "Add new book successfully"
+      notification_copy_created: "Copy of book %{title} has been successfully \
+        added to library. CopyId: %{copy_id}"
     destroy:
       copy_deleted: "Copy has been deleted!"
     copy:
@@ -199,11 +201,18 @@ en:
       expired_date: "Card expired date: "
       available_count: "Copies available for this book: "
       no_card: "Register a card first."
+      title: "Title: "
+      publisher: "Publisher: "
+      category: "Category: "
+      price: "Price: "
+      copy_not_available: "Copies not available for this book."
     create:
       success: "Registered success. Waiting for librarian's confirmation."
       status_fail: "Set status failed"
       cannot_borrow: "Can't borrow anymore, \
         you has been borrowed %{count} book(s)."
+      has_book_not_return: "You have some books not returned yet, \
+        can't borrow anymore."
     destroy:
       book_returned: "Book has been returned."
       status_fail: "Set status failed"
@@ -228,10 +237,27 @@ en:
     book_confirmation:
       confirm: "Confirm"
       confirm_text: "Are you sure to confirm this book?"
+      delete: "Delete"
+      confirm_delete: "Are you sure?"
     index:
       page_title: "List of pending books"
+      no_book_pending_right_now: "No book pending right now."
     update:
       updated: "Book has been confirmed."
+      failed: "Confirmation failure."
+    destroy:
+      not_confirm: "Not confirmations for this book."
+      status_fail: "Set status fail"
+
+  comment_confirmations:
+    comment_confirmation:
+      confirm: "Confirm"
+      confirm_text: "Are you sure to confirm this comment?"
+    index:
+      page_title: "List of pending comments"
+      no_comment_pending_right_now: "No comment pending right now."
+    update:
+      updated: "Comment has been confirmed."
       failed: "Confirmation failure."
 
   notifications:
@@ -268,7 +294,7 @@ en:
       submitted: "Submitted %{s} ago."
     _edit_form:
       save: "Save"
-  
+
   footer:
     about: "About"
     contact: "Contact"

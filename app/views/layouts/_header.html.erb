@@ -21,7 +21,7 @@
           <li>
               <%= link_to t("book"), books_path %>
           </li>
-          
+
           <% if logged_in? %>
           <li>
             <%= link_to t("_header.notifications"), notifications_path %>
@@ -39,7 +39,7 @@
                     <%= link_to t("_header.book_confirm"), book_confirmations_path %>
                   </li>
                   <li>
-                    <%= link_to t("_header.comment_confirm"), "#" %>
+                    <%= link_to t("_header.comment_confirm"), comment_confirmations_path %>
                   </li>
                 </ul>
               </li>

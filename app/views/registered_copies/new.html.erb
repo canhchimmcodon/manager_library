@@ -5,9 +5,12 @@
       <%= form_for @registered_copy do |f| %>
       <%= render "shared/error_messages", object: f.object %>
 
-      <h1><%= current_user.name %></h1>
+      <h3><%= current_user.name %></h3>
+      <br>
+      <br>
       <h6><%= t ".issued_date" %><%= current_user.card.issued_date %></h6>
       <h6><%= t ".expired_date" %><%= current_user.card.expired_date %></h6>
+      <br>
       <h6><%= t ".title" %><%= @book.title %></h6>
       <h6><%= t ".publisher" %><%= @book.publisher_name %></h6>
       <h6><%= t ".category" %><%= @book.category_name %></h6>
@@ -17,11 +20,9 @@
       <%= f.label :registered_date %>
       <%= f.text_field :registered_date, readonly: true, class: "form-control" %>
 
-      <%= f.label :card_id %>
-      <%= f.text_field :card_id, readonly: true, class: "form-control" %>
+      <%= f.hidden_field :card_id, readonly: true, class: "form-control" %>
 
-      <%= f.label :copy_id %>
-      <%= f.text_field :copy_id, readonly: true, class: "form-control" %>
+      <%= f.hidden_field :copy_id, readonly: true, class: "form-control" %>
 
       <%= f.submit t(".register_button"), class: "btn btn-primary" %>
 

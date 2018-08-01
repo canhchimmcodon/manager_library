@@ -2,7 +2,8 @@ class RegisteredCopiesController < ApplicationController
   before_action :find_book, only: %i(new)
   before_action :find_registered_copy, only: %i(destroy)
   before_action :has_card?, only: %i(index new)
-  before_action :can_borrow, only: %i(create)
+  before_action :can_borrow, :has_book_not_return?, only: %i(create)
+  before_action :copies_not_available, only: %i(new)
 
   def index
     @registered_copies = current_user.card.registered_copies.page(params[:page])
@@ -16,7 +17,7 @@ class RegisteredCopiesController < ApplicationController
 
   def create
     @registered_copy = RegisteredCopy.new registered_copy_params
-    if set_borrowed
+    if set_registered
       if @registered_copy.save
         flash[:info] = t ".success"
         redirect_to root_url
@@ -66,10 +67,10 @@ class RegisteredCopiesController < ApplicationController
     @copy.set_status :available
   end
 
-  def set_borrowed
+  def set_registered
     @copy = Copy.find_by id: @registered_copy.copy_id
-    return if !@copy || @copy.borrowed?
-    @copy.set_status :borrowed
+    return if !@copy || @copy.registered?
+    @copy.set_status :registered
   end
 
   def find_registered_copy
@@ -90,5 +91,17 @@ class RegisteredCopiesController < ApplicationController
     flash[:danger] = t(".cannot_borrow", count:
       current_user.card.registered_copies_count)
     redirect_to registered_copies_path
+  end
+
+  def has_book_not_return?
+    return unless current_user.card.has_book_not_return?
+    flash[:danger] = t(".has_book_not_return")
+    redirect_to registered_copies_path
+  end
+
+  def copies_not_available
+    return if @book.copies_available_count.positive?
+    flash[:danger] = t ".copy_not_available"
+    redirect_to books_path
   end
 end

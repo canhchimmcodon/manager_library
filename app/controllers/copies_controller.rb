@@ -20,6 +20,8 @@ class CopiesController < ApplicationController
     @copy = Copy.new copy_params
     if @copy.save
       flash[:info] = t ".success"
+      add_notification_current_user t(".notification_copy_created",
+        title: @copy.book_title, copy_id: @copy.id)
       redirect_to root_url
     else
       render :new

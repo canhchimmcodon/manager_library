@@ -7,6 +7,8 @@ class Copy < ApplicationRecord
 
   scope :available_copies, ->{where status: :available}
 
+  delegate :title, to: :book, prefix: true, allow_nil: true
+
   paginates_per Settings.BOOK_PER_PAGE
 
   def set_status new_status

@@ -18,7 +18,7 @@ class BooksController < ApplicationController
       flash[:info] = t ".success"
       add_notification_current_user t(".notification_book_created",
         title: @book.title)
-      redirect_to root_url
+      redirect_to books_path
     else
       render :new
     end

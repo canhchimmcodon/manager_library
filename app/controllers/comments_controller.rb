@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: %i(edit update destroy)
 
   def index
-    @comments = @book.comments.page(params[:page])
+    @comments = @book.comments.confirmed.page(params[:page])
     respond_to do |format|
       format.html
       format.js
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build comment_params
     @comment.book_id = @book.id
-    @comment.accepted = true
+    @comment.accepted = true if current_user.librarian? || current_user.admin?
 
     if @comment.save
       respond_to do |format|

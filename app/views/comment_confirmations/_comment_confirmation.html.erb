@@ -1,0 +1,10 @@
+<ul>
+  <%= comment_confirmation.id %>
+  <%= comment_confirmation.content %>
+  <%= comment_confirmation.user.name %>
+  <%= comment_confirmation.book.title %>
+  <%= comment_confirmation.created_at %>
+  <%= link_to t(".confirm"), comment_confirmation_path(comment_confirmation),
+    method: :put, data: {confirm: t(".confirm_text")} %>
+</ul>
+<br>
