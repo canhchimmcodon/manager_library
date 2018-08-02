@@ -106,6 +106,7 @@ en:
     index:
       page_title: "Book list"
       add_book: "Add new book"
+      quote: "We read to know we're not alone."
     new:
       page_title: "Add new book"
       add_button: "Add new book"
@@ -119,6 +120,7 @@ en:
       quote: "We read to know we're not alone."
       by: "By"
       send_us_message: "Send Us a Message"
+      share: "Share" 
     create:
       success: "Add new book successfully"
       notification_book_created: "Book %{title} has been successfully \
@@ -135,6 +137,7 @@ en:
       delete: "Delete"
       copies: "Copies"
       confirm: "Are you sure?"
+      borrow: "Borrow"
     _comment_form:
       comment: "Comment"
 

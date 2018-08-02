@@ -10,7 +10,7 @@ User.create!(name: "Librarian",
   password_confirmation: "111111",
   role: 1)
 
-10.times do |n|
+100.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
   password = "111111"
@@ -21,7 +21,7 @@ User.create!(name: "Librarian",
     role: 2)
 end
 
-10.times do |n|
+100.times do |n|
   name = Faker::Book.author
   address = Faker::Address.full_address
   phone = Faker::PhoneNumber.cell_phone
@@ -47,3 +47,17 @@ end
 Card.create!(issued_date: Date.parse("2018-07-25"),
   expired_date: Date.parse("2019-01-02"),
   user_id: 3)
+
+user = User.find_by email: "librarian@gmail.com"
+100.times do |n|
+  title = Faker::Book.title
+  price = (1+rand(1000)) * 1000
+  isbn = n
+  publisher_id = Publisher.all.sample.id
+  category_id = Category.all.sample.id
+  Book.create!(title: title,
+    price: price,
+    isbn: isbn,
+    publisher_id: publisher_id,
+    category_id: category_id)
+end

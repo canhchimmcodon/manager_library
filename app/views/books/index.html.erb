@@ -1,12 +1,45 @@
-<% provide :title, t(".page_title") %>
-<h1><%= t ".page_title" %></h1>
-<ul class="books">
-  <%= render @books %>
-</ul>
-<br>
-<div class="add-new-book">
-<% if logged_in? && current_user.librarian? %>
-  <%= link_to t(".add_book"), new_book_path %>
-<% end %>
+<div>
+  <div class="add-new-book">
+  <% if logged_in? && current_user.librarian? %>
+    <div class="button-add-new-book">
+      <%= link_to t(".add_book"), new_book_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+  
+  <%= paginate @books, theme: "twitter-bootstrap-4", 
+    pagination_class: "pagination-sm" %>
+
+  <div class="rh rh-100 section-booking">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-12">
+          <div class="rh-detail-left rh-blog">
+            <%= render @books %>    
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-6 col-sxs-12">
+              <div class="rh rh-reservation rh-blog-sidebar">
+                <h5><%= t ".category" %></h5>
+                <ul>
+                  <% Category.all.map(&:name).each do |category| %>
+                    <li><%= category %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="back_to_top" class="active"> 
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+  </div>
+
+  <%= paginate @books, theme: "twitter-bootstrap-4", 
+    pagination_class: "pagination-sm" %>
 </div>
-<%= paginate @books %>
