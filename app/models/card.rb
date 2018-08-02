@@ -12,6 +12,14 @@ class Card < ApplicationRecord
     registered_copies.count
   end
 
+  def expected_return_dates
+    registered_copies.map(&:expected_return_date)
+  end
+
+  def has_book_not_return?
+    expected_return_dates.compact.any?{|date| date < Date.today}
+  end
+
   def can_borrow
     registered_copies_count < Settings.MAX_BORROWED_BOOK
   end
