@@ -7,7 +7,9 @@
       </h1>
       <% if @user.user? && current_user.current_user?(@user) %>
         <% if !@user.card_activated? %>
-          <%= link_to t(".register"), register_path %>
+          <div class="register-card">
+            <%= link_to t(".register"), register_path %>
+          </div>
         <% end %>
       <% end %>
     </section>

@@ -113,6 +113,9 @@ en:
       publisher: "Publisher"
       category: "Category"
       load_more: "Load more"
+      quote: "We read to know we're not alone."
+      by: "By"
+      send_us_message: "Send Us a Message"
     create:
       success: "Add new book successfully"
       notification_book_created: "Book %{title} has been successfully \
@@ -265,3 +268,16 @@ en:
       submitted: "Submitted %{s} ago."
     _edit_form:
       save: "Save"
+  
+  footer:
+    about: "About"
+    contact: "Contact"
+    help: "Help"
+    copyright: "Copyrights (C) 2018 ACCESS Co. Ltd"
+    message: "You have questions regarding our services? \
+      Contact us, we will be happy to help you out!"
+    mail: "example@access.test"
+    place: "Tokyo, Japan"
+    tel: "+00 000-000-0000"
+    power_html: "Power by %{href}"
+    power_link: "ACCESS Co. Ltd"

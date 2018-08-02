@@ -17,13 +17,17 @@
         <span><%= t ".remember" %></span>
       <% end %>
 
+      <div class="sign-in-social-newtwork">
       <br><%= link_to t(".sign_in_google"), "/auth/google_oauth2" %>
       <br><%= link_to t(".sign_in_facebook"), "/auth/facebook" %>
+      </div>
 
       <%= f.submit t(".login"), class: "btn btn-primary" %>
     <% end %>
 
-    <p><%= t ".newuser" %>
-      <%= link_to t(".signupnow"), signup_path %></p>
+    <p class="sign-up-now">
+      <%= t ".newuser" %>
+      <%= link_to t(".signupnow"), signup_path %>
+    </p>
   </div>
 </div>

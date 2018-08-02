@@ -4,7 +4,9 @@
   <%= render @books %>
 </ul>
 <br>
+<div class="add-new-book">
 <% if logged_in? && current_user.librarian? %>
   <%= link_to t(".add_book"), new_book_path %>
 <% end %>
+</div>
 <%= paginate @books %>
