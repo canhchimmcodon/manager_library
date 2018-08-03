@@ -1,7 +1,7 @@
-en:
+ja:
   activerecord:
     models:
-      user: User
+      user: ユーザー
     attributes:
       user:
         name: "Nickname"
@@ -11,14 +11,14 @@ en:
 
   base_title: "The Future Library"
   book: "Book"
-  please_login: "Please login"
+  please_login: ログインしてください
 
   shared:
     homepage:
-      page_title: "Home"
-      welcome_message: "Welcome to the Future Library!"
+      page_title: ホームページ
+      welcome_message: 未来図書館へようこそ！
     _error_messages:
-      error: "error"
+      error: エラー
       headf: "The form contains %{s}"
     _stat:
       following: "following"
@@ -26,7 +26,7 @@ en:
 
   static_pages:
     home:
-      page_title: "Home"
+      page_title: ホームページ
     help:
       page_title: "Help"
       help_html: "To get help on this website, see the %{href}."
@@ -57,10 +57,7 @@ en:
     show:
       micropost: "Microposts (%{s})"
       wait: "Waiting for mail acpetion"
-      register: "Register card"
-      card_information: "Card information"
-      issued_date: "Card issued date: "
-      expired_date: "Card expired date: "
+      register: "Register"
     find_user:
       notfound: "No account found"
     logged_in_user:
@@ -76,67 +73,68 @@ en:
 
   sessions:
     new:
-      login: "Login"
-      newuser: "New user ?"
+      login: ログイン
+      newuser: 新しいユーザーですか?
       signupnow: "Sign up now!"
-      remember: "Remember me in this computer"
-      forgot_password: "Forgot password"
-      sign_in_google: "Sign in with Google"
-      sign_in_facebook: "Sign in with Facebook"
+      remember: このコンピュータで私を覚えている
+      forgot_password: パスワード紛失
+      sign_in_google: Googleでログイン
+      sign_in_facebook: Facebookでログイン
     create:
-      invalid: "Invalid username or password"
+      invalid: ユーザー名かパスワードが無効
     check_auth:
       message: "Account is not activated. \
         Check email for link acitvate"
 
   _header:
-    login: "Login"
-    logout: "Logout"
-    user: "User"
-    account: "Account"
-    profile: "Profile"
-    setting: "Setting"
-    borrowed_book: "Borrowed book"
-    confirm: "Confirm"
-    comment_confirm: "Confirm comments"
-    book_confirm: "Confirm books"
-    notifications: "Notifications"
+    login: ログイン
+    logout: ログアウト
+    user: ユーザー
+    account: アカウント
+    profile: プロフィール
+    setting: 設定
+    borrowed_book: 借りた本
+    confirm: 確認
+    comment_confirm: コメントの確認
+    book_confirm: 本の確認
+    notifications: お知らせ
 
   books:
     index:
-      page_title: "Book list"
-      add_book: "Add new book"
+      page_title: 本のリスト
+      add_book: 新しい本を追加する
     new:
-      page_title: "Add new book"
-      add_button: "Add new book"
+      page_title: 新しい本を追加する
+      add_button: 新しい本を追加する
     show:
       not_exists: "Book not exists!"
       price: "Price"
       isbn: "ISBN"
-      publisher: "Publisher"
-      category: "Category"
+      publisher: 出版社
+      category: カテゴリー
       load_more: "Load more"
       quote: "We read to know we're not alone."
       by: "By"
-      send_us_message: "Send Us a Message"
+      send_us_message: 私達にメッセージを送ります
     create:
-      success: "Add new book successfully"
+      success: 新しい本を追加しました
       notification_book_created: "Book %{title} has been successfully \
         added to library."
     edit:
       page_title: "Update book"
-      save_changes: "Save changes"
+      save_changes: 変更内容を保存する
     update:
-      book_updated: "Book has been updated!"
+      book_updated: 本が更新されました
     destroy:
-      book_deleted: "Book has been deleted!"
+      book_deleted: 本が削除されました
     book:
-      edit: "Edit"
-      delete: "Delete"
-      copies: "Copies"
-      confirm: "Are you sure?"
+      edit: 編集
+      delete: 削除
+      copies: コピー
+      confirm: 本気ですか？
+
     _comment_form:
-      comment: "Comment"
+      comment: コメント
 
   copies:
     form:
@@ -159,7 +157,7 @@ en:
       copy_deleted: "Copy has been deleted!"
     copy:
       delete: "Delete"
-      confirm: "Are you sure?"
+      confirm: 本気ですか？
 
   omniauth_callbacks:
     create:
@@ -192,7 +190,7 @@ en:
   registered_copies:
     registered_copy:
       return: "Return this book"
-      confirm: "Are you sure?"
+      confirm: 本気ですか？
     index:
       page_title: "Registered Copies"
       no_card: "Register a card first."
@@ -208,7 +206,6 @@ en:
       publisher: "Publisher: "
       category: "Category: "
       price: "Price: "
-      copy_not_available: "Copies not available for this book."
     create:
       success: "Registered success. Waiting for librarian's confirmation."
       status_fail: "Set status failed"
@@ -223,7 +220,7 @@ en:
   password_resets:
     new:
       submit: "Submit"
-      forgot_password: "Forgot Password"
+      forgot_password: パスワード紛失
     create:
       mess: "Email sent with password reset instructions"
       notfound: "Email address not found"
@@ -241,7 +238,7 @@ en:
       confirm: "Confirm"
       confirm_text: "Are you sure to confirm this book?"
       delete: "Delete"
-      confirm_delete: "Are you sure?"
+      confirm_delete: 本気ですか？
     index:
       page_title: "List of pending books"
       no_book_pending_right_now: "No book pending right now."
@@ -250,6 +247,7 @@ en:
       failed: "Confirmation failure."
     destroy:
       not_confirm: "Not confirmations for this book."
+      status_fail: "Set status fail"
 
   comment_confirmations:
     comment_confirmation:
@@ -266,7 +264,7 @@ en:
     notification:
       timestamp: "Posted %{time} ago."
       delete: "Delete"
-      confirm: "Are you sure?"
+      confirm: 本気ですか？
     index:
       page_title: "Notifications"
     destroy:
@@ -298,8 +296,8 @@ en:
       save: "Save"
 
   footer:
-    about: "About"
-    contact: "Contact"
+    about: 私たちに関しては
+    contact: お問い合わせ
     help: "Help"
     copyright: "Copyrights (C) 2018 ACCESS Co. Ltd"
     message: "You have questions regarding our services? \
@@ -311,7 +309,8 @@ en:
     power_link: "ACCESS Co. Ltd"
 
   language:
-    language: "Language"
-    english: "English"
-    vietnamese: "Vietnamese"
-    japanese: "Japanese"
+    language: 言語
+    english: 英語
+    vietnamese: ベトナム語
+    japanese: 日本語
+

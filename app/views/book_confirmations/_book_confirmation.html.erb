@@ -7,6 +7,6 @@
   <%= book_confirmation.card.user_id %>
   <%= link_to t(".confirm"), book_confirmation_path(book_confirmation),
     method: :put, data: {confirm: t(".confirm_text")} %>
-  <%= link_to t(".delete"), book_confirmation, method: :delete,
-    data: {confirm: t(".confirm_delete")} %>
+  <%= link_to t(".delete"), book_confirmation_path(book_confirmation),
+    method: :delete, data: {confirm: t(".confirm_delete")} %>
 </ul>

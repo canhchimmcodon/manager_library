@@ -1,6 +1,6 @@
 class CommentConfirmationsController < ApplicationController
   before_action :has_comment_pending?, only: %i(index)
-  before_action :find_comment, only: %i(update)
+  before_action :find_comment, only: %i(update destroy)
 
   def index; end
 
@@ -10,6 +10,11 @@ class CommentConfirmationsController < ApplicationController
     else
       flash[:danger] = t ".failed"
     end
+    redirect_back fallback_location: root_path
+  end
+
+  def destroy
+    @comment_confirmation.destroy
     redirect_back fallback_location: root_path
   end
 

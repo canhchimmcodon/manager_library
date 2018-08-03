@@ -16,12 +16,9 @@ class BookConfirmationsController < ApplicationController
   end
 
   def destroy
-    if set_available
-      @book_confirmations.destroy
-      flash[:info] = t ".not_confirm"
-    else
-      flash[:danger] = t ".status_fail"
-    end
+    return unless set_available
+    @book_confirmation.destroy
+    flash[:success] = t ".not_confirm"
     redirect_back fallback_location: root_path
   end
 
@@ -47,7 +44,7 @@ class BookConfirmationsController < ApplicationController
   end
 
   def set_available
-    @copy = Copy.find_by id: @registered_copy.copy_id
+    @copy = Copy.find_by id: @book_confirmation.copy_id
     return if !@copy || @copy.available?
     @copy.set_status :available
   end

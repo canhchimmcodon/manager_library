@@ -6,5 +6,7 @@
   <%= comment_confirmation.created_at %>
   <%= link_to t(".confirm"), comment_confirmation_path(comment_confirmation),
     method: :put, data: {confirm: t(".confirm_text")} %>
+  <%= link_to t(".delete"), comment_confirmation_path(comment_confirmation),
+    method: :delete, data: {confirm: t(".confirm_delete")} %>
 </ul>
 <br>

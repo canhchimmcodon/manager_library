@@ -1,4 +1,4 @@
-en:
+vi:
   activerecord:
     models:
       user: User
@@ -7,60 +7,57 @@ en:
         name: "Nickname"
         first_name: "First name"
         last_name: "Last name"
-        password_confirmation: "Retype password"
+        password_confirmation: "Nhập lại mật khẩu"
 
-  base_title: "The Future Library"
-  book: "Book"
-  please_login: "Please login"
+  base_title: "Thư viện Tương Lai"
+  book: "Sách"
+  please_login: "Vui lòng đăng nhập"
 
   shared:
     homepage:
-      page_title: "Home"
-      welcome_message: "Welcome to the Future Library!"
+      page_title: "Trang chủ"
+      welcome_message: "Chào mừng đến với Thư viện Tương Lai!"
     _error_messages:
-      error: "error"
-      headf: "The form contains %{s}"
+      error: "lỗi"
+      headf: "Biểu mẫu chứa %{s}"
     _stat:
       following: "following"
       follower: "followers"
 
   static_pages:
     home:
-      page_title: "Home"
+      page_title: "Trang chủ"
     help:
-      page_title: "Help"
-      help_html: "To get help on this website, see the %{href}."
-      help_link: "tutorial here"
+      page_title: "Trợ giúp"
+      help_html: "Để nhận sự giúp đỡ, xem %{href}."
+      help_link: "hướng dẫn ở đây"
     about:
-      page_title: "About"
-      about_message: "We are Naitei Ruby from ACCESS Co. Ltd."
+      page_title: "Về chúng tôi"
+      about_message: "Chúng tôi là Naitei Ruby đến từ ACCESS Co. Ltd."
     contact:
-      page_title: "Contact"
-      contact_message: "Find us at Framgia Laboratory."
+      page_title: "Liên hệ"
+      contact_message: "Tìm chúng tôi ở Framgia Laboratory."
 
   users:
     index:
-      index: "All users"
+      index: "Tất cả người dùng"
     new:
-      signup: "Sign up"
-      re-pas: "Retype password"
-      cr-acc: "Create account"
+      signup: "Đăng ký"
+      re-pas: "Nhập lại mật khẩu"
+      cr-acc: "Tạo tài khoản"
     create:
-      message: "Check email to activate!"
+      message: "Kiểm tra email để xác nhận!"
     edit:
-      edit: "Edit account"
-      save: "Save"
+      edit: "Chỉnh sửa tài khoản"
+      save: "Lưu"
     update:
-      updated: "Information is updated."
+      updated: "Thông tin đã được cập nhật."
     destroy:
-      destroyed: "Account is deleted"
+      destroyed: "Tài khoản đã bị xóa"
     show:
       micropost: "Microposts (%{s})"
-      wait: "Waiting for mail acpetion"
-      register: "Register card"
-      card_information: "Card information"
-      issued_date: "Card issued date: "
-      expired_date: "Card expired date: "
+      wait: "Đang chờ email xác nhận"
+      register: "Đăng ký"
     find_user:
       notfound: "No account found"
     logged_in_user:
@@ -208,7 +205,6 @@ en:
       publisher: "Publisher: "
       category: "Category: "
       price: "Price: "
-      copy_not_available: "Copies not available for this book."
     create:
       success: "Registered success. Waiting for librarian's confirmation."
       status_fail: "Set status failed"
@@ -250,6 +246,7 @@ en:
       failed: "Confirmation failure."
     destroy:
       not_confirm: "Not confirmations for this book."
+      status_fail: "Set status fail"
 
   comment_confirmations:
     comment_confirmation:
@@ -298,10 +295,10 @@ en:
       save: "Save"
 
   footer:
-    about: "About"
-    contact: "Contact"
-    help: "Help"
-    copyright: "Copyrights (C) 2018 ACCESS Co. Ltd"
+    about: "Về chúng tôi"
+    contact: "Liên hệ"
+    help: "Trợ giúp"
+    copyright: "Bản quyền (C) 2018 ACCESS Co. Ltd"
     message: "You have questions regarding our services? \
       Contact us, we will be happy to help you out!"
     mail: "example@access.test"
@@ -311,7 +308,7 @@ en:
     power_link: "ACCESS Co. Ltd"
 
   language:
-    language: "Language"
-    english: "English"
-    vietnamese: "Vietnamese"
-    japanese: "Japanese"
+    language: "Ngôn ngữ"
+    english: "Tiếng Anh"
+    vietnamese: "Tiếng Việt"
+    japanese: "Tiếng Nhật"

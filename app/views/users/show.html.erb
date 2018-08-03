@@ -2,11 +2,18 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
+      <h3>
         <%= @user.name %>
-      </h1>
+      </h3>
+      <br>
       <% if @user.user? && current_user.current_user?(@user) %>
-        <% if !@user.card_activated? %>
+        <% if @user.card_activated? %>
+          <h6><%= t ".card_information" %><h6><br>
+          <%= t ".issued_date" %>
+          <%= @user.card.issued_date %><br>
+          <%= t ".expired_date" %>
+          <%= @user.card.expired_date %>
+        <% else %>
           <div class="register-card">
             <%= link_to t(".register"), register_path %>
           </div>
