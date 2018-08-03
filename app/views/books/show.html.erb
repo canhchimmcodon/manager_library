@@ -27,11 +27,13 @@
           <div class="rh-about-hotel rh">
             <h4><%= @book.title %></h4>
             <div class="rh-blog-category">
-              <% if @book.authors.present? %>
-                <%= t ".by" %>
-                <%= @book.authors.each {|author| author} %>
-              <% end %>
               <ul>
+                  <br><li>
+                    <% if @book.authors.present? %>
+                      <%= t ".by" %>
+                      <%= @book.authors.pluck(:name).to_sentence %>
+                    <% end %>
+                  </li>
                   <br><li><%= t ".price" %>: <%= @book.price %></li>
                   <br><li><%= t ".isbn" %>: <%= @book.isbn %></a></li>
                   <br><li><%= t ".publisher" %>: <%= @book.publisher_name %></li>

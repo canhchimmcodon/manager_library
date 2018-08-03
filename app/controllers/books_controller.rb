@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   before_action :book_support, only: %i(new edit create)
 
   def index
-    @books = Book.page(params[:page]).book_info
+    @books = Book.book_by_name(params[:search]).page(params[:page]).book_info
   end
 
   def new
@@ -24,7 +24,8 @@ class BooksController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+  end
 
   def edit; end
 
@@ -47,7 +48,7 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit :title,
-      :price, :isbn, :publisher_id, :category_id
+      :price, :isbn, :publisher_id, :category_id, :search
   end
 
   def librarian_user

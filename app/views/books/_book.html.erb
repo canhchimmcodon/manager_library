@@ -1,7 +1,8 @@
+<div class="rh-detail-left rh-blog">
 <div class="rh-box">
   <div class="rh rh-blog-img">
     <a href="javascript:;">  
-      <%= image_tag "blog/1.jpg", alt: "about-detail" %>
+      <%= image_tag Settings.IMAGE_BOOK, alt: "about-detail" %>
     </a>
   </div>
 
@@ -11,16 +12,19 @@
       <% if logged_in? %>
         <% if current_user.librarian? %>
           <div class="book-index-edit-delete">
-          <%= link_to t(".edit"), edit_book_path(book) %>
-          <%= link_to t(".delete"), book, method: :delete,
-              data: {confirm: t(".confirm")} %>
-          <%= link_to t(".copies"), copies_path(book_id: book.id) %>
+            <%= link_to t(".edit"), edit_book_path(book) %>
+            <%= link_to t(".delete"), book, method: :delete,
+                data: {confirm: t(".confirm")} %>
+            <%= link_to t(".copies"), copies_path(book_id: book.id) %>
           </div>
         <% elsif current_user.user? %>
+          <div>>
           <%= link_to t(".borrow"), new_registered_copy_path(book_id: book.id),
             class: "rh-check-btn" %>
+          </div>
         <% end %>
-    </div>
     <% end %>
+    </div>
   </div>
+</div>
 </div>

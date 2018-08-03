@@ -647,7 +647,7 @@
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.26) 26%, rgba(255, 255, 255, 0.3) 30%, rgba(17, 41, 73, 1) 99%, rgba(14, 38, 70, 1) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#0e2646', GradientType=0);
+            filter: unquote("progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#0e2646', GradientType=0)");
             /* IE6-9 */
         }
         .rh-banner-widgets {
@@ -1058,7 +1058,7 @@
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.9) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000', GradientType=0);
+            filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000', GradientType=0)");
             /* IE6-9 */
         }
         .stay-box .overley .stay-detail {
@@ -1638,7 +1638,7 @@
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.26) 26%, rgba(255, 255, 255, 0.3) 30%, rgba(17, 41, 73, 1) 99%, rgba(14, 38, 70, 1) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#0e2646', GradientType=0);
+            filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000', GradientType=0)");
             /* IE6-9 */
         }
         .rh-detail-widgets{
