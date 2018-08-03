@@ -15,6 +15,7 @@ SIZE_IMAGE_OPTION: 80
 SIZE_IMAGE_OPTION_SMALL: 50
 MAX_SIZE_PICTURE_MB: 5
 LIMIT_SIZE_PICTURE: 400
+SIZE_TERMS_SERVICE: "115x15"
 
 IMAGE_FORMAT: "image/jpeg,image/gif,image/png"
 IMAGE_LOGO: "http://res.cloudinary.com/hoangnguyen679/image/upload/v1533283233/logo.png"

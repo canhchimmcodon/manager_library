@@ -94,4 +94,8 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_sent_at < Settings.EXPIRED_HOUR.hours.ago
   end
+
+  def description
+    I18n.t(".terms_of_service")
+  end
 end

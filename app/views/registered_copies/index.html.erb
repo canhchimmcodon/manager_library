@@ -5,6 +5,14 @@
   pagination_class: "pagination-sm" %>
 </div>
 
-<ul class="registered_copies">
-  <%= render @registered_copies %>
+<div class="rh rh-100 section-booking">
+  <div class="col-lg-3"><%= t ".book" %></div>
+  <div class="col-lg-2"><%= t ".registered_date" %></div>
+  <div class="col-lg-1"><%= t ".borrowed" %></div>
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <%= render @registered_copies %>
+    </div>
+  </div>
 </ul>
