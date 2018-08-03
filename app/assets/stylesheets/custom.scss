@@ -15,11 +15,14 @@
   :hover {
     color: $pink-light;
   }
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
 }
+
 .user-single img {
   float: left;
   margin-right: 10px;
-  width: 8%;
+  width: 6%;
 }
 
 .help-page a {
@@ -89,4 +92,84 @@
 
 .load-more-container a {
   color: $gray;
+}
+
+.comment-form {
+  // display: flex;
+  // overflow: hidden;
+}
+
+.comment-form-text {
+  overflow: hidden;
+  padding: 12px 10px 10px 0px;
+  width: 80%;
+}
+
+.comment-form-submit {
+  float: right;
+  padding: 20px 20px 20px 10px;
+}
+
+.comment-form-submit .btn-primary {
+  background-color: $brown;
+  border-color: $brown;
+}
+
+.book-index-single-tile a {
+  color: $gray;
+}
+
+.button-add-new-book {
+  text-align: center;
+}
+
+.button-add-new-book a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.button-add-new-book .btn-primary {
+  background-color: $brown;
+  border-color: $brown;
+  width: 250px;
+  height: 80px;
+  padding-top: 22px;
+}
+
+.button-add-new-book .btn {
+  cursor: pointer;
+}
+
+.button-submit-default {
+  margin-top: 20px;
+
+}
+
+.button-submit-default .btn-primary {
+  background-color: $brown;
+  border-color: $brown;
+}
+
+.button-submit-default a {
+  color: #fff;
+}
+
+.comment-edit-delete a {
+  color: $blue;
+}
+
+.event-sigle-btn.social {
+  float: left;
+}
+
+.book-index-edit-delete a {
+  color: $blue;
+}
+
+.rh-check-btn-borrow a {
+  color: $gray;
+}
+
+.forgot-password a {
+  color: $blue;
 }

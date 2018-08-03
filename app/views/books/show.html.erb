@@ -42,12 +42,22 @@
           <!-- Share social newtwork -->
           <div class="rh-blog-social">
             <ul class="event-sigle-btn social">
-              <li><span>Share:</span></li>
-              <li><a class="" href="javascript:;"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a class="" href="javascript:;"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a class="" href="javascript:;"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-              <li><a class="" href="javascript:;"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-              <li><a class="" href="javascript:;"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              <li><span><%= t ".share" %></span></li>
+              <li><a class="" href="javascript:;">
+                <i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li><a class="" href="javascript:;">
+                <i class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+              <li><a class="" href="javascript:;">
+                <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+              </li>
+              <li><a class="" href="javascript:;">
+                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li><a class="" href="javascript:;">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+              </li>
             </ul>
           </div>
 
@@ -70,7 +80,9 @@
           <div class="rh-about-hotel rh-btm rh">
               <h4><%= t "send_us_message" %></h4>
               <% if logged_in? %>
-                <%= render partial: "comments/comment_form" %>
+                <div class="comment-form-x">
+                  <%= render partial: "comments/comment_form" %>
+                </div>
               <% end %>
               <br><br>
               <div class="container">

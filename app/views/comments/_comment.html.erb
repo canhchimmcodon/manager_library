@@ -6,9 +6,7 @@
       <%= comment.content %>
     </span>
     <br>
-    <small>
-      <%= t("comments._comment.submitted",
-        s: time_ago_in_words(comment.created_at)) %>
+    <small class="comment-edit-delete">
       <% if comment.user == current_user %>
         <%= link_to t("comments._comment.edit"),
           edit_book_comment_path(@book, comment),
@@ -17,6 +15,8 @@
           [comment.book, comment], method: :delete, remote: true,
           data: {confirm: t("comments._comment.sure")} %>
       <% end %>
+      <%= t("comments._comment.submitted",
+        s: time_ago_in_words(comment.created_at)) %>
     </small>
   </li>
 </div>
