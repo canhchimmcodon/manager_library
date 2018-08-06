@@ -61,3 +61,18 @@ user = User.find_by email: "librarian@gmail.com"
     publisher_id: publisher_id,
     category_id: category_id)
 end
+
+100.times do |n|
+  book_id = Book.all.sample.id
+  author_id = Author.all.sample.id
+  AuthorBook.create!(book_id: book_id,
+    author_id: author_id)
+end
+
+100.times do |n|
+  status = rand(2)
+  book_id = Book.all.sample.id
+  Copy.create!(status: status,
+    book_id: book_id)
+end
+

@@ -17,7 +17,7 @@
   <%= f.label :category %>
   <%= f.collection_select :category_id, @book_support.categories,
     :id, :name, include_blank: false %>
-  
+
   <div class="button-submit-default">
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>

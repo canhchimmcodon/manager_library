@@ -32,13 +32,6 @@
   }
 }
 
-.add-new-book a {
-  color: $blue;
-  :hover {
-    color: $pink-light;
-  }
-}
-
 .notifications a {
   color: $blue;
   :hover {
@@ -101,14 +94,15 @@
 
 .comment-form-text {
   overflow: hidden;
-  padding: 12px 10px 10px 0px;
+  padding: 12px 0px 10px 0px;
   width: 80%;
 }
 
 .comment-form-submit {
   float: right;
-  padding: 20px 20px 20px 10px;
+  padding: 20px 20px 20px 0px;
 }
+
 
 .comment-form-submit .btn-primary {
   background-color: $brown;
@@ -172,4 +166,20 @@
 
 .forgot-password a {
   color: $blue;
+}
+
+.rh-100 {
+  padding-top: 30px;
+}
+
+.rh-footer {
+  margin-top: 30px;
+}
+
+.form-search {
+  margin-top: 30px;
+}
+
+.index-search-form {
+
 }

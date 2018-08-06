@@ -107,6 +107,8 @@ en:
       page_title: "Book list"
       add_book: "Add new book"
       quote: "We read to know we're not alone."
+      search : "Search"
+      type_book_title: "Type book's title you want"
     new:
       page_title: "Add new book"
       add_button: "Add new book"
@@ -120,7 +122,7 @@ en:
       quote: "We read to know we're not alone."
       by: "By"
       send_us_message: "Send Us a Message"
-      share: "Share" 
+      share: "Share"
     create:
       success: "Add new book successfully"
       notification_book_created: "Book %{title} has been successfully \

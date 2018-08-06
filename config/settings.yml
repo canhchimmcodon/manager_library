@@ -17,3 +17,6 @@ MAX_SIZE_PICTURE_MB: 5
 LIMIT_SIZE_PICTURE: 400
 
 IMAGE_FORMAT: "image/jpeg,image/gif,image/png"
+IMAGE_LOGO: "http://res.cloudinary.com/hoangnguyen679/image/upload/v1533283233/logo.png"
+IMAGE_ACCESS: "https://res.cloudinary.com/hoangnguyen679/image/upload/v1533283398/access.jpg"
+IMAGE_BOOK: "https://res.cloudinary.com/hoangnguyen679/image/upload/v1533283581/book-wallpaper.jpg"
