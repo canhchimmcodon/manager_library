@@ -1,8 +1,33 @@
-<% provide :title, t(".page_title") %>
-<h1><%= t ".page_title" %></h1>
-<ul class="copies">
-  <%= render @copies %>
-</ul>
-<br>
-<%= link_to t(".add_copy"), new_copy_path %>
-<%= paginate @copies %>
+<% provide :title, t(".page_title", book: @book.title) %>
+<h1><%= t(".page_title", book: @book.title) %></h1>
+<h3><%= t(".available_count", count: @book.copies_available_count) %>
+<div>
+  <div class="add-new-book">
+  <% if logged_in? && current_user.librarian? %>
+    <div class="button-add-new-book">
+      <%= link_to t(".add_copy"), new_copy_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  </div>
+
+  <%= paginate @copies, theme: "twitter-bootstrap-4",
+    pagination_class: "pagination-sm" %>
+
+  <div class="rh rh-100 section-booking">
+    <div class="col-lg-1"><%= t ".id" %></div>
+    <div class="col-lg-11"><%= t ".status" %></div>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <%= render @copies %>
+      </div>
+    </div>
+  </div>
+
+  <div id="back_to_top" class="active">
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+  </div>
+
+  <%= paginate @copies, theme: "twitter-bootstrap-4",
+    pagination_class: "pagination-sm" %>
+</div>

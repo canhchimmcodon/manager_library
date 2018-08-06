@@ -1,9 +1,14 @@
-<li>
-  <%= copy.id %>
-  <%= copy.book_id %>
-  <%= copy.status %>
+<li class="copy-index">
+  <div class="col-lg-1">
+    <%= copy.id %>
+  </div>
+  <div class="col-lg-2">
+    <%= copy.status %>
+  </div>
   <% if current_user.librarian? %>
-    <%= link_to t(".delete"), copy, method: :delete,
-      data: {confirm: t(".confirm")} %>
+    <div class="col-lg-9">
+      <%= link_to t(".delete"), copy, method: :delete,
+        data: {confirm: t(".confirm")} %>
+    </div>
   <% end %>
 </li>

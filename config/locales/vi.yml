@@ -12,6 +12,23 @@ vi:
   base_title: "Thư viện Tương Lai"
   book: "Sách"
   please_login: "Vui lòng đăng nhập"
+  terms_of_service: "Last Updated: 2018-08-01\nThese terms of service \
+    (\"Terms\") apply to your access and use of The Future Library \
+    (the \"Service\"). Please read them carefully.\n\nAccepting these \
+    Terms\nIf you access or use the Service, it means you agree to be bound \
+    by all of the terms below. So, before you use the Service, please read \
+    all of the terms. If you don't agree to all of the terms below, please \
+    do not use the Service. Also, if a term does not make sense to you, \
+    please let us know by e-mailing example@access.test\n\nChanges to these \
+    Terms\nWe reserve the right to modify these Terms at any time. For \
+    instance, we may need to change these Terms if we come out with a new \
+    feature or for some other reason.\n\nIf you continue to use the Service \
+    after the revised Terms go into effect, then you have accepted the \
+    changes to these Terms.\n\nCreating Accounts\nWhen you create \
+    an account or use another service to log in to the Service, you agree \
+    to maintain the security of your password and accept all risks of \
+    unauthorized access to any data or other information you provide to \
+    the Service."
 
   shared:
     homepage:
@@ -59,17 +76,18 @@ vi:
       wait: "Đang chờ email xác nhận"
       register: "Đăng ký"
     find_user:
-      notfound: "No account found"
+      notfound: "Không có tài khoản nào được tìm thấy"
     logged_in_user:
-      pleaselog: "Please log in!"
+      pleaselog: "Vui lòng đăng nhập!"
     _user:
-      delete: "Delete"
+      delete: "Xóa"
       sure: "Are you sure ?"
     require_card:
-      check_mail: "Check mail to activate card!"
+      check_mail: "Kiểm tra hòm thư để kích hoạt thẻ!"
     register_card:
-      register: "Register"
-      agree: "I agree"
+      page_title: "Điều khoản dịch vụ của Thư viện Tương Lai"
+      register: "Đăng ký thẻ"
+      agree: "Tôi đồng ý với điều khoản dịch vụ"
 
   sessions:
     new:
@@ -140,9 +158,12 @@ vi:
       new_book_message: "You want to create new book instead?"
       create_new_book: "Create new book here"
     index:
-      page_title: "List copies"
+      page_title: "List copies of %{book}"
       add_copy: "Add new copy"
       not_exists: "No copies exists!"
+      available_count: "Copies available: %{count}"
+      id: "Id"
+      status: "Status"
     new:
       page_title: "Add new copy"
       add_button: "Add new copy"
@@ -212,9 +233,17 @@ vi:
         you has been borrowed %{count} book(s)."
       has_book_not_return: "You have some books not returned yet, \
         can't borrow anymore."
+      noti_book_registered_user: "You have successfully registered \
+        a book: %{title}."
+      noti_book_registered_librarian: "User %{name} has registered \
+        a book: %{title}, go to Confirm books."
     destroy:
       book_returned: "Book has been returned."
       status_fail: "Set status failed"
+      noti_book_returned_user: "You have successfully returned \
+        a book: %{title}."
+      noti_book_returned_librarian: "User %{name} has returned \
+        a book: %{title}."
 
   password_resets:
     new:
@@ -258,6 +287,11 @@ vi:
     update:
       updated: "Comment has been confirmed."
       failed: "Confirmation failure."
+      noti_book_confirmed: "Book %{title} has been confirmed, \
+        now you can borrow."
+    destroy:
+      not_confirm: "Not confirmations for this book."
+      noti_book_not_confirmed: "Book %{title} has been declined."
 
   notifications:
     notification:

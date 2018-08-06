@@ -1,10 +1,17 @@
-<li>
+<li class="copy-index">
   <% if logged_in? && current_user.user? %>
-    <%= registered_copy.copy_id %>
-    <%= registered_copy.card_id %>
-    <%= registered_copy.registered_date %>
-    <%= registered_copy.borrowed %>
-    <%= link_to t(".return"), registered_copy, method: :delete,
-          data: {confirm: t(".confirm")} %>
+    <div class="col-lg-3">
+      <%= registered_copy.copy.book_title %>
+    </div>
+    <div class="col-lg-2">
+      <%= registered_copy.registered_date %>
+    </div>
+    <div class="col-lg-1">
+      <%= registered_copy.borrowed %>
+    </div>
+    <div class="col-lg-6">
+      <%= link_to t(".return"), registered_copy, method: :delete,
+            data: {confirm: t(".confirm")} %>
+    </div>
   <% end %>
 </li>

@@ -1,7 +1,7 @@
 <div class="rh-detail-left rh-blog">
 <div class="rh-box">
   <div class="rh rh-blog-img">
-    <a href="javascript:;">  
+    <a href="javascript:;">
       <%= image_tag Settings.IMAGE_BOOK, alt: "about-detail" %>
     </a>
   </div>
@@ -18,7 +18,7 @@
             <%= link_to t(".copies"), copies_path(book_id: book.id) %>
           </div>
         <% elsif current_user.user? %>
-          <div>>
+          <div>
           <%= link_to t(".borrow"), new_registered_copy_path(book_id: book.id),
             class: "rh-check-btn" %>
           </div>
