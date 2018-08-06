@@ -18,6 +18,6 @@ LIMIT_SIZE_PICTURE: 400
 SIZE_TERMS_SERVICE: "115x15"
 
 IMAGE_FORMAT: "image/jpeg,image/gif,image/png"
-IMAGE_LOGO: "http://res.cloudinary.com/hoangnguyen679/image/upload/v1533283233/logo.png"
+IMAGE_LOGO: "https://res.cloudinary.com/hoangnguyen679/image/upload/v1533541364/Webp.net-resizeimage.png"
 IMAGE_ACCESS: "https://res.cloudinary.com/hoangnguyen679/image/upload/v1533283398/access.jpg"
 IMAGE_BOOK: "https://res.cloudinary.com/hoangnguyen679/image/upload/v1533283581/book-wallpaper.jpg"

@@ -24,7 +24,7 @@ class RegisteredCopiesController < ApplicationController
         add_notification_librarian_user t(".noti_book_registered_librarian",
           name: current_user.name, title: @registered_copy.copy.book_title)
         flash[:info] = t ".success"
-        redirect_to root_url
+        redirect_to books_url
       else
         render :new
       end
@@ -42,7 +42,7 @@ class RegisteredCopiesController < ApplicationController
       add_notification_librarian_user t(".noti_book_returned_librarian",
         name: current_user.name, title: @registered_copy.copy.book_title)
       flash[:success] = t ".book_returned"
-      redirect_to root_url
+      redirect_to books_url
     else
       flash[:danger] = t ".status_fail"
       redirect_back fallback_location: root_path
