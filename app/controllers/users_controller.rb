@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i(index edit update)
   before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: %i(destroy)
@@ -15,7 +14,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
       flash[:info] = t ".message"
       redirect_to @user
     else
@@ -69,13 +67,6 @@ class UsersController < ApplicationController
     return if @user
     flash[:danger] = t ".notfound"
     redirect_to root_url
-  end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "users.logged_in_user.pleaselog"
-    redirect_to login_url
   end
 
   def correct_user

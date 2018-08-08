@@ -19,8 +19,7 @@
               <li><%= link_to t("language.japanese"), locale: "ja" %></li>
             </ul>
           </li>
-
-          <% if logged_in? %>
+          <% if user_signed_in? %>
             <li><%= link_to t("_header.user"), users_path %></li>
             <li>
               <%= link_to t("_header.notifications"), notifications_path %>
@@ -42,7 +41,7 @@
                 </ul>
               </li>
               <% end %>
-            
+
             <li>
               <a href="javascript:;"><%= t "_header.account" %></a>
               <ul class="dropdown-nav rh-drop-menu">
@@ -53,12 +52,13 @@
                   <%= link_to t("_header.setting"), edit_user_path(current_user) %>
                 </li>
                 <li>
-                  <%= link_to t("_header.logout"), logout_path, method: :delete %>
+                  <%= link_to t("_header.logout"),
+                    destroy_user_session_path, method: :delete %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t("_header.login"), login_path %></li>
+            <li><%= link_to t("_header.login"), new_user_session_path %></li>
           <% end %>
         </ul>
       </div>

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable,
+    :confirmable, :lockable
   attr_accessor :remember_token, :card_activation_token, :reset_token
   enum role: {admin: 0, librarian: 1, user: 2}
 
@@ -10,20 +13,7 @@ class User < ApplicationRecord
 
   paginates_per Settings.OBJECT_PER_PAGE
 
-  before_save{email.downcase!}
   validates :terms_of_service, acceptance: {accept: true}
-  validates :name, presence: true,
-    length: {maximum: Settings.MAX_NAME_LENGTH}
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true,
-    length: {maximum: Settings.MAX_EMAIL_LENGTH},
-    format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: false}
-
-  has_secure_password
-  validates :password, presence: true,
-    length: {minimum: Settings.MIN_PASSWORD_LENGTH},
-    allow_nil: true
 
   delegate :id, to: :card, prefix: true, allow_nil: true
 

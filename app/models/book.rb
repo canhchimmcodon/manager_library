@@ -7,7 +7,7 @@ class Book < ApplicationRecord
   belongs_to :publisher
 
   scope :book_info, ->{select :id, :title, :price}
-  scope :book_by_name, ->(search) {where("title LIKE ?", "%#{search}%")}
+  scope :book_by_name, ->(search){where("title LIKE ?", "%#{search}%")}
   delegate :name, to: :publisher, prefix: true, allow_nil: true
   delegate :name, to: :category, prefix: true, allow_nil: true
 
