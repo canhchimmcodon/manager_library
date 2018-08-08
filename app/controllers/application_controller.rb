@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   before_action :set_locale
   protect_from_forgery with: :exception
-  include SessionsHelper
 
   def add_notification_user id, content
     user = User.find_by id: id
@@ -25,13 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "please_login"
-    redirect_to login_url
-  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

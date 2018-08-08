@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   scope "(:locale)", locale: /en|vi|ja/ do
     root "static_pages#home"
   end
@@ -10,15 +12,8 @@ Rails.application.routes.draw do
   get "auth/:provider/callback", to: "omniauth_callbacks#create"
   get "auth/failure", to: "omniauth_callbacks#failure"
 
-  get "/signup", to: "users#new"
-  post "/signup", to: "users#create"
-
   get "/register", to: "users#register_card"
   patch "/register", to: "users#require_card"
-
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
 
   resources :users
   resources :books do
