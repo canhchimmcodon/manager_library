@@ -1,0 +1,18 @@
+= provide :title, t(".page_title")
+%h1= t ".page_title"
+%div{class: "container pagination justify-content-center"}
+  = paginate @registered_copies, theme: "twitter-bootstrap-4",
+    pagination_class: "pagination-sm"
+
+%div{class: "rh rh-100 section-booking"}
+  .col-lg-3
+    = t ".book"
+  .col-lg-2
+    = t ".registered_date"
+  .col-lg-1
+    = t ".borrowed"
+  %br
+  %br
+  .container
+    .row
+      = render @registered_copies

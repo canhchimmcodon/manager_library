@@ -1,0 +1,36 @@
+%div
+  %div(class="rh form-search")
+    .container
+      .row
+        .comment-form-x
+          = form_tag books_path, method: :get do
+            .comment-form-submit
+              = submit_tag(t(".search"), class: "btn btn-primary")
+            .comment-form-text
+              = text_field_tag :search, params[:search],
+                class: "form-control", placeholder: t(".type_book_title")
+
+  - if logged_in? && current_user.librarian?
+    .button-add-new-book
+      = link_to t(".add_book"), new_book_path, class: "btn btn-primary"
+  %div
+    = paginate @books, theme: "twitter-bootstrap-4",
+      pagination_class: "pagination-sm"
+  
+  %div
+  %div(class="rh rh-100 section-booking")
+    .container
+      .row
+        %div(class="col-lg-9 col-md-8 col-sm-12 book-all")
+          = render @books
+        %div(class="col-lg-3 col-md-4")
+          .row
+            %div(class="col-md-12 col-sm-6 col-xs-6 col-sxs-12")
+              %div(class="rh rh-reservation rh-blog-sidebar")
+                %h5= t ".category"
+                %ul
+                  - Category.all.map(&:name).each do |category|
+                    %li= category
+                 
+  #back_to_top.active
+    %i(class="fa fa-angle-up" aria-hidden="true")

@@ -1,0 +1,26 @@
+= provide :title, t(".page_title")
+.row
+  %aside.col-md-4
+    %section.user_info
+      = form_for @registered_copy do |f|
+      = render "shared/error_messages", object: f.object
+
+      %h3= current_user.name
+      %br
+      %br
+      %h6= t ".issued_date" = current_user.card.issued_date
+      %h6= t ".expired_date" = current_user.card.expired_date
+      %br
+      %h6
+        = t ".title" = @book.title
+        = t ".publisher" = @book.publisher_name
+        = t ".category" = @book.category_name
+        = t ".price" = @book.price
+        = t ".available_count" = @book.copies_available_count
+
+      = f.label :registered_date
+      = f.text_field :registered_date, readonly: true, class: "form-control"
+      = f.hidden_field :card_id, readonly: true, class: "form-control"
+      = f.hidden_field :copy_id, readonly: true, class: "form-control"
+      = f.submit t(".register_button"), class: "btn btn-primary"
+

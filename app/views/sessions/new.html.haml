@@ -1,0 +1,33 @@
+= provide :title, t(".login")
+%h1= t ".login"
+
+.row.justify-content-center
+  .col-md-6
+    = form_for :session, url: login_path do |f|
+      = f.label :email
+      = f.email_field :email, class: "form-control"
+
+      .forgot-password
+        = f.label :password
+        = link_to t(".forgot_password"), new_password_reset_path
+        = f.password_field :password, class: "form-control"
+      
+      = f.label :remember_me, class: "checkbox inline" do 
+        = f.check_box :remember_me
+        %span= t ".remember"
+      
+      .rh-blog-social
+        %ul.event-sigle-btn.social
+          %li
+            %a{href: "/auth/facebook"}
+              %i(class="fa fa-facebook" aria-hidden="true")
+          %li
+            %a{href: "/auth/google_oauth2"}
+              %i(class="fa fa-google-plus" aria-hidden="true")
+
+      .button-submit-default
+        = f.submit t(".login"), class: "btn btn-primary"
+
+    %p.sign-up-now
+      = t ".newuser"
+      = link_to t(".signupnow"), signup_path

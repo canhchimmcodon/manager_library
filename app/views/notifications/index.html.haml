@@ -1,0 +1,10 @@
+= provide :title, t(".page_title")
+%h1= t ".page_title"
+- if current_user.notifications.any?
+  %h2= current_user.name
+  %div(class="container pagination justify-content-center")
+    = paginate @notifications, theme: "twitter-bootstrap-4",
+      pagination_class: "pagination-sm"
+
+  %ul.notifications
+    = render @notifications
