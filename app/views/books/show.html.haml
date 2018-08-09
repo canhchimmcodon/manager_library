@@ -7,7 +7,7 @@
         %div(class="col-lg-12 col-md-12 col-sm-12 col-xs-12")
           %div(class="rh text-center")
             %p.book-quote= t ".quote"
-         
+
 %div(class="rh rh-100 section-booking")
   .container
     .row
@@ -24,21 +24,24 @@
                     = @book.authors.pluck(:name).to_sentence
                 %br
                 %li
-                  = t(".price")
+                  = Book.human_attribute_name :price
                   = @book.price
                 %br
                 %li
-                  = t(".isbn")
+                  = Book.human_attribute_name :isbn
                   = @book.isbn
                 %br
                 %li
-                  = t(".publisher")
+                  = Book.human_attribute_name :publisher
                   = @book.publisher_name
                 %br
                 %li
-                  = t(".category")
+                  = Book.human_attribute_name :category
                   = @book.category_name
-                 
+                %li
+                  = Book.human_attribute_name :summary
+                  = @book.summary
+
           .rh-blog-social
             %ul(class="event-sigle-btn social")
               %li
@@ -49,7 +52,7 @@
               %li
                 %a(href="javascript:;")
                   %i(class="fa fa-google-plus" aria-hidden="true")
-              
+
           .rh-review
             %div(class="review-detail pull-left")
               %ul
@@ -63,10 +66,10 @@
                   %i(class="fa fa-star" aria-hidden="true")
                 %li
                   %i(class="fa fa-star" aria-hidden="true")
-                 
+
           %div(class="rh-about-hotel rh-btm rh")
-            %h4= t "send_us_message"
-            - if logged_in?
+            %h4= t ".send_us_message"
+            - if user_signed_in?
               .comment-form-x
                 = render partial: "comments/comment_form"
               .container
@@ -75,16 +78,16 @@
               .load-more-container
                 = link_to t(".load_more"),
                   book_comments_path(@book.id, page: 2),
-                  id: "load-more-button", remote: true 
-             
+                  id: "load-more-button", remote: true
+
       %div(class="col-lg-3 col-md-4 col-sm-12 col-xs-12")
         .row
           %div(class="col-md-12 col-sm-6 col-xs-6 col-sxs-12")
             %div(class="rh rh-reservation rh-blog-sidebar")
-              %h5= t ".category"
+              %h5= Category.model_name.human
               %ul
                 - Category.all.map(&:name).each do |category|
                   %li= category
-                 
+
 #back_to_top.active
   %i(class="fa fa-angle-up" aria-hidden="true")

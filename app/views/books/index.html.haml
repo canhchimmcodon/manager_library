@@ -10,13 +10,13 @@
               = text_field_tag :search, params[:search],
                 class: "form-control", placeholder: t(".type_book_title")
 
-  - if logged_in? && current_user.librarian?
+  - if user_signed_in? && current_user.librarian?
     .button-add-new-book
       = link_to t(".add_book"), new_book_path, class: "btn btn-primary"
   %div
     = paginate @books, theme: "twitter-bootstrap-4",
       pagination_class: "pagination-sm"
-  
+
   %div
   %div(class="rh rh-100 section-booking")
     .container
@@ -27,10 +27,10 @@
           .row
             %div(class="col-md-12 col-sm-6 col-xs-6 col-sxs-12")
               %div(class="rh rh-reservation rh-blog-sidebar")
-                %h5= t ".category"
+                %h5= Category.model_name.human
                 %ul
                   - Category.all.map(&:name).each do |category|
                     %li= category
-                 
+
   #back_to_top.active
     %i(class="fa fa-angle-up" aria-hidden="true")

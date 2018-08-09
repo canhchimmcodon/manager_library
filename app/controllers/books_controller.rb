@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
-  before_action :logged_in_user, :librarian_user,
-    only: %i(new create edit update destroy)
+  before_action :librarian_user, only: %i(new create edit update destroy)
   before_action :find_book, only: %i(show edit update destroy)
   before_action :book_support, only: %i(new edit create)
 
