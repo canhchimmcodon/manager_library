@@ -159,6 +159,9 @@ ja:
     homepage:
       page_title: ホームページ
       welcome_message: 未来図書館へようこそ！
+      quote: "We read to know we're not alone."
+      search: 探索
+      type_book_title: "Type book's title you want"
     _error_messages:
       error: エラー
       headf: "フォーム%{s}つのエラーが含まれています"

@@ -103,8 +103,25 @@
   padding: 20px 20px 20px 0px;
 }
 
-
 .comment-form-submit .btn-primary {
+  background-color: $brown;
+  border-color: $brown;
+}
+
+.comment-form-text-home {
+  overflow: hidden;
+  padding: 12px 0px 10px 0px;
+  width: 100%;
+}
+
+.comment-form-submit-home {
+  padding: 20px 20px 20px 0px;
+}
+
+.comment-form-submit-home .btn-primary {
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
   background-color: $brown;
   border-color: $brown;
 }
@@ -198,4 +215,22 @@
 
 .link-shared a {
   color: $blue;
+}
+
+.text-white {
+  color: $white
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  background-image: url(library_banner_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.container-xs {
+  padding-top: 70px;
 }

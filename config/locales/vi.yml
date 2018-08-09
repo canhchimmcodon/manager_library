@@ -159,6 +159,9 @@ vi:
     homepage:
       page_title: "Trang chủ"
       welcome_message: "Chào mừng đến với Thư viện Tương Lai!"
+      quote: "We read to know we're not alone."
+      search: "Tìm kiếm"
+      type_book_title: "Nhập tiêu đề sách"
     _error_messages:
       error: "lỗi"
       headf: "Biểu mẫu chứa %{s}"

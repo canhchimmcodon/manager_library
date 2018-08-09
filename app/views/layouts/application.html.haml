@@ -5,8 +5,8 @@
 
     %body>
       = render "layouts/header"
-      .container{style: "margin-top:30px;"}
+      .container{style: "margin-top:0px;"}
         - flash.each do |message_type, message|
           %div{class: "alert alert-#{message_type}"}= message
-        = yield
+      = yield
       = render "layouts/footer"

@@ -159,6 +159,9 @@ en:
     homepage:
       page_title: "Home"
       welcome_message: "Welcome to the Future Library!"
+      quote: "We read to know we're not alone."
+      search: "Search"
+      type_book_title: "Type book's title you want"
     _error_messages:
       error: "error"
       headf: "The form contains %{s}"
