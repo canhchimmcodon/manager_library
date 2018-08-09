@@ -1,3 +1,16 @@
-= provide(:title, t("shared.homepage.page_title"))
-.center.jumbotron
-  %h2= t "shared.homepage.welcome_message"
+= provide :title, t("shared.homepage.page_title")
+.banner
+  .container-xs
+    %h1.text-white= t "shared.homepage.welcome_message"
+    %h3.text-white.banner-xs= t "shared.homepage.quote"
+    %div.rh.form-search
+      .container
+        .comment-form-x
+          = form_tag books_path, method: :get do
+            .row
+              .comment-form-text-home
+                = text_field_tag :search, params[:search],
+                  class: "form-control", placeholder: t(".type_book_title")
+            .row
+              .comment-form-submit-home
+                = submit_tag t(".search"), class: "btn btn-primary"

@@ -25,5 +25,4 @@ Rails.application.routes.draw do
   resources :registered_copies, only: %i(index new create update destroy)
   resources :book_confirmations, only: %i(index update destroy)
   resources :comment_confirmations, only: %i(index update destroy)
-  resources :notifications, only: %i(index create destroy)
 end

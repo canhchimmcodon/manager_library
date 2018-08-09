@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   has_one :card, dependent: :destroy
   has_many :comments
-  has_many :notifications
 
   scope :all_user, ->{select :id, :name, :email}
 
