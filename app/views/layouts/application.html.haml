@@ -1,0 +1,14 @@
+%html
+  %head>
+    %title= full_title yield(:title)
+    = render "layouts/rails_default"
+
+    %body>
+      = render "layouts/header"
+      .container{style: "margin-top:30px;"}
+        - flash.each do |message_type, message|
+          %div{class: "alert alert-#{message_type}"}= message
+        = yield
+      = render "layouts/footer"
+
+

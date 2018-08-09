@@ -1,0 +1,12 @@
+%li.copy-index
+  - if logged_in? && current_user.user?
+    .col-lg-3
+      = registered_copy.copy.book_title
+    .col-lg-2
+      = registered_copy.registered_date
+    .col-lg-1
+      = registered_copy.borrowed
+    .col-lg-6
+      = link_to t(".return"), registered_copy, method: :delete,
+        data: {confirm: t(".confirm")}
+

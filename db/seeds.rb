@@ -21,7 +21,7 @@ User.create!(name: "Librarian",
     role: 2)
 end
 
-100.times do |n|
+100.times do
   name = Faker::Book.author
   address = Faker::Address.full_address
   phone = Faker::PhoneNumber.cell_phone
@@ -30,12 +30,12 @@ end
     phone: phone)
 end
 
-10.times do |n|
+10.times do
   category = Faker::Book.genre
   Category.create!(name: category)
 end
 
-10.times do |n|
+10.times do
   publisher = Faker::Book.publisher
   address = Faker::Address.full_address
   phone = Faker::PhoneNumber.cell_phone
@@ -48,7 +48,6 @@ Card.create!(issued_date: Date.parse("2018-07-25"),
   expired_date: Date.parse("2019-01-02"),
   user_id: 3)
 
-user = User.find_by email: "librarian@gmail.com"
 100.times do |n|
   title = Faker::Book.title
   price = (1+rand(1000)) * 1000
@@ -62,17 +61,16 @@ user = User.find_by email: "librarian@gmail.com"
     category_id: category_id)
 end
 
-100.times do |n|
+100.times do
   book_id = Book.all.sample.id
   author_id = Author.all.sample.id
   AuthorBook.create!(book_id: book_id,
     author_id: author_id)
 end
 
-100.times do |n|
+100.times do
   status = rand(2)
   book_id = Book.all.sample.id
   Copy.create!(status: status,
     book_id: book_id)
 end
-

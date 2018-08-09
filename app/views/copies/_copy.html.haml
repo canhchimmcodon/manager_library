@@ -1,0 +1,9 @@
+%li.copy-index
+  .col-lg-1
+    = copy.id
+  .col-lg-2
+    = copy.status
+  - if current_user.librarian?
+    .col-lg-9
+      = link_to t(".delete"), copy, method: :delete,
+        data: {confirm: t(".confirm")}

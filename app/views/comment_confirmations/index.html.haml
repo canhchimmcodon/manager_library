@@ -1,0 +1,5 @@
+= provide :title, t(".page_title") 
+%h1= t ".page_title"
+%ul.comment_confirmations
+  = render partial: "comment_confirmation",
+    collection: @comment_confirmations

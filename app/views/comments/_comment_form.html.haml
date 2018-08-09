@@ -1,0 +1,5 @@
+= form_for [@book, Comment.new], class: "comment-form",remote: true do |f|
+  .comment-form-submit
+    = f.submit t("books._comment_form.comment"), class: "btn btn-primary"
+  .comment-form-text
+    = f.text_area :content, class: "form-control"

@@ -1,0 +1,21 @@
+%li.copy-index
+  = t ".user"
+  = comment_confirmation.user.name
+  %br
+  = t ".book"
+  = comment_confirmation.book.title
+  %br
+  = t ".created_at"
+  = comment_confirmation.created_at
+  %br
+  = t ".content"
+  = comment_confirmation.content
+  %br
+  .col-lg-1
+    = link_to t(".confirm"), comment_confirmation_path(comment_confirmation),
+      method: :put, data: {confirm: t(".confirm_text")}
+      %br
+  .col-lg-11
+    = link_to t(".delete"), comment_confirmation_path(comment_confirmation),
+      method: :delete, data: {confirm: t(".confirm_delete")}
+      %br

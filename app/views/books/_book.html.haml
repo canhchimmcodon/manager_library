@@ -1,0 +1,19 @@
+%div(class="rh-detail-left rh-blog")
+  %div(class="rh-box")
+    %div(class="rh rh-blog-img")
+      %a(href="javascript:;")
+        = image_tag Settings.IMAGE_BOOK, alt: "about-detail"
+  %div(class="rh-about-hotel rh rh-blog-list")
+    %h4.book-index-single-tile= link_to book.title, book
+    %div
+      - if logged_in?
+        - if current_user.librarian?
+          .book-index-edit-delete
+            = link_to t(".edit"), edit_book_path(book)
+            = link_to t(".delete"), book, method: :delete,
+                data: {confirm: t(".confirm")}
+            = link_to t(".copies"), copies_path(book_id: book.id)
+        - elsif current_user.user?
+          .borrow-book-div         
+            = link_to t(".borrow"), new_registered_copy_path(book_id: book.id),
+              class: "rh-check-btn"

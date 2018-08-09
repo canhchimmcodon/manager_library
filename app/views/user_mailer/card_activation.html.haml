@@ -1,0 +1,6 @@
+%p
+  = t(".hi")
+  = @user.name
+  = t(".message")
+= link_to t(".activate"), 
+  edit_card_activation_url(@user.card_activation_token, email: @user.email)
