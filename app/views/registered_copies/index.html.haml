@@ -6,11 +6,11 @@
 
 %div{class: "rh rh-100 section-booking"}
   .col-lg-3
-    = t ".book"
+    = Book.human_attribute_name :title
   .col-lg-2
-    = t ".registered_date"
+    = RegisteredCopy.human_attribute_name :registered_date
   .col-lg-1
-    = t ".borrowed"
+    = RegisteredCopy.human_attribute_name :borrowed
   %br
   %br
   .container

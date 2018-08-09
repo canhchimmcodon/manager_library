@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: {accept: true}
 
   delegate :id, to: :card, prefix: true, allow_nil: true
+  delegate :issued_date, to: :card, prefix: true, allow_nil: true
+  delegate :expired_date, to: :card, prefix: true, allow_nil: true
 
   class << self
     def from_omniauth auth

@@ -1,5 +1,5 @@
 %li.copy-index
-  - if logged_in? && current_user.user?
+  - if user_signed_in? && current_user.user?
     .col-lg-3
       = registered_copy.copy.book_title
     .col-lg-2

@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: %i(new create edit update destroy)
   before_action :find_book, only: %i(index create show edit update destroy)
   before_action :find_comment, only: %i(edit update destroy)
 

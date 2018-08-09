@@ -21,6 +21,10 @@ User.create!(name: "Librarian",
     role: 2)
 end
 
+User.first.confirm
+User.second.confirm
+User.find(3).confirm
+
 100.times do
   name = Faker::Book.author
   address = Faker::Address.full_address

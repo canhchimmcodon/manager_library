@@ -1,6 +1,5 @@
 class CopiesController < ApplicationController
-  before_action :logged_in_user, :librarian_user,
-    only: %i(new create update destroy)
+  before_action :librarian_user, only: %i(new create update destroy)
   before_action :find_copy, only: %i(update destroy)
   before_action :copy_support, only: %i(new create)
 
