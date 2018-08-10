@@ -23,6 +23,8 @@
  *
  *= require form-wizard
  *
+ *= require social-share-button
+ *
  *= require_tree .
  *= require_self
  */

@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :confirmable, :lockable
+  devise :omniauthable,
+    omniauth_providers: %i(facebook google_oauth2 twitter)
   attr_accessor :remember_token, :card_activation_token, :reset_token
   enum role: {admin: 0, librarian: 1, user: 2}
 
@@ -21,16 +23,11 @@ class User < ApplicationRecord
   class << self
     def from_omniauth auth
       where(provider: auth.provider,
-        uid: auth.uid).first_or_initialize.tap do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
+        uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
-        user.first_name = auth.info.first_name
-        user.last_name = auth.info.last_name
-        user.password = SecureRandom.hex(8) if user.new_record?
+        user.password = Devise.friendly_token[0, 20]
         user.name = auth.info.name
-        user.save
-        user
+        user.skip_confirmation!
       end
     end
 
@@ -45,6 +42,15 @@ class User < ApplicationRecord
 
     def new_token
       SecureRandom.urlsafe_base64
+    end
+
+    def new_with_session params, session
+      super.tap do |user|
+        if data = session["devise.facebook_data"] &&
+          session["devise.facebook_data"]["extra"]["raw_info"]
+          user.email = data["email"] if user.email.blank?
+        end
+      end
     end
   end
 
