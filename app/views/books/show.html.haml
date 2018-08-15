@@ -43,15 +43,7 @@
                   = @book.summary
 
           .rh-blog-social
-            %ul(class="event-sigle-btn social")
-              %li
-                %span= t ".share"
-              %li
-                %a(href="javascript:;")
-                  %i(class="fa fa-facebook" aria-hidden="true")
-              %li
-                %a(href="javascript:;")
-                  %i(class="fa fa-google-plus" aria-hidden="true")
+            = social_share_button_tag(@book.title, desc: @book.title)
 
           .rh-review
             %div(class="review-detail pull-left")
