@@ -8,6 +8,7 @@ class UpdateForeignKey < ActiveRecord::Migration[5.2]
     remove_foreign_key "comments", "books"
     remove_foreign_key "comments", "users"
     remove_foreign_key "copies", "books"
+    remove_foreign_key "notifications", "users"
     remove_foreign_key "registered_copies", "cards"
     remove_foreign_key "registered_copies", "copies"
 
@@ -19,6 +20,7 @@ class UpdateForeignKey < ActiveRecord::Migration[5.2]
     add_foreign_key "comments", "books", on_delete: :cascade
     add_foreign_key "comments", "users", on_delete: :cascade
     add_foreign_key "copies", "books", on_delete: :cascade
+    add_foreign_key "notifications", "users", on_delete: :cascade
     add_foreign_key "registered_copies", "cards", on_delete: :cascade
     add_foreign_key "registered_copies", "copies", on_delete: :cascade
 
