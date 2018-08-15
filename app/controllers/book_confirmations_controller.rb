@@ -8,6 +8,8 @@ class BookConfirmationsController < ApplicationController
     if @book_confirmation.update_attributes(borrowed: true)
       set_borrowed
       add_book_duration
+      add_notification_user(@book_confirmation.card.user_id,
+        t(".noti_book_confirmed", title: @book_confirmation.copy.book_title))
       flash[:success] = t ".updated"
     else
       flash[:danger] = t ".failed"
@@ -18,6 +20,8 @@ class BookConfirmationsController < ApplicationController
   def destroy
     return unless set_available
     @book_confirmation.destroy
+    add_notification_user(@book_confirmation.card.user_id,
+      t(".noti_book_not_confirmed", title: @book_confirmation.copy.book_title))
     flash[:success] = t ".not_confirm"
     redirect_back fallback_location: root_path
   end
