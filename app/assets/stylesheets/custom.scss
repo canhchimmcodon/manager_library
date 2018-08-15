@@ -234,3 +234,27 @@
 .container-xs {
   padding-top: 70px;
 }
+
+.notification-wrap {
+  border: 1px solid $notification-border;
+  border-radius: 3px;
+  padding: 15px;
+  background: $notification-background;
+  float: left;
+  width: 100%;
+}
+
+.notification-wrap-unread {
+  border: 1px solid $notification-border;
+  border-radius: 3px;
+  padding: 15px;
+  background: $notification-background-unread;
+  float: left;
+  width: 100%;
+}
+
+.notification-wrap img {
+  float: left;
+  margin-right: 10px;
+  width: 100%;
+}

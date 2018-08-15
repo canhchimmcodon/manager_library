@@ -1,5 +1,6 @@
 class NotificationsController < ApplicationController
   before_action :find_notification, only: %i(destroy)
+  after_action :read_notifications, only: %i(index)
 
   def index
     @notifications = current_user.notifications
@@ -22,5 +23,9 @@ class NotificationsController < ApplicationController
     return if @notification
     flash[:danger] = t ".not_exists"
     redirect_to root_url
+  end
+
+  def read_notifications
+    @notifications.unread.update_all(read: true)
   end
 end

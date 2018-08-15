@@ -96,4 +96,8 @@ class User < ApplicationRecord
   def description
     I18n.t(".terms_of_service")
   end
+
+  def unread_notifications_count
+    notifications.unread.count
+  end
 end
