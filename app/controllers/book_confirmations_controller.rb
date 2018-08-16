@@ -13,8 +13,9 @@ class BookConfirmationsController < ApplicationController
         Book.name, @book_confirmation.copy.book_id)
       flash[:success] = t ".updated"
     else
-      flash[:danger] = t ".failed"
+      flash[:warning] = t ".failed"
     end
+    redirect_to root_url
   end
 
   def destroy
@@ -39,7 +40,7 @@ class BookConfirmationsController < ApplicationController
   def find_registered_copy
     @book_confirmation = RegisteredCopy.find_by id: params[:id]
     return if @book_confirmation
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 

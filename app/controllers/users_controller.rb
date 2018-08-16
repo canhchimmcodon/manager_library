@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:danger] = t ".notfound"
+    flash[:warning] = t ".notfound"
     redirect_to root_url
   end
 
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
       UserMailer.card_activation(user).deliver_now
       flash[:info] = t "users.require_card.check_mail"
     else
-      flash[:danger] = user.errors.full_messages.join
+      flash[:warning] = user.errors.full_messages.join
     end
   end
 end

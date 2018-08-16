@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   def find_book
     @book = Book.find_by id: params[:id]
     return if @book
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 

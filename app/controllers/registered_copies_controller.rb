@@ -31,7 +31,7 @@ class RegisteredCopiesController < ApplicationController
         render :new
       end
     else
-      flash[:danger] = t ".status_fail"
+      flash[:warning] = t ".status_fail"
       redirect_back fallback_location: root_path
     end
   end
@@ -48,7 +48,7 @@ class RegisteredCopiesController < ApplicationController
       flash[:success] = t ".book_returned"
       redirect_to root_url
     else
-      flash[:danger] = t ".status_fail"
+      flash[:warning] = t ".status_fail"
       redirect_back fallback_location: root_path
     end
   end
@@ -62,14 +62,14 @@ class RegisteredCopiesController < ApplicationController
   def find_book
     @book = Book.find_by id: params[:book_id]
     return if @book
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 
   def find_copy
     @copy = Copy.find_by id: params[:id]
     return if @copy
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 
@@ -88,32 +88,32 @@ class RegisteredCopiesController < ApplicationController
   def find_registered_copy
     @registered_copy = RegisteredCopy.find_by id: params[:id]
     return if @registered_copy
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 
   def has_card?
     return if current_user.card
-    flash[:danger] = t ".no_card"
+    flash[:warning] = t ".no_card"
     redirect_to root_url
   end
 
   def can_borrow
     return if current_user.card.can_borrow
-    flash[:danger] = t(".cannot_borrow", count:
+    flash[:warning] = t(".cannot_borrow", count:
       current_user.card.registered_copies_count)
     redirect_to registered_copies_path
   end
 
   def has_book_not_return?
     return unless current_user.card.has_book_not_return?
-    flash[:danger] = t(".has_book_not_return")
+    flash[:warning] = t(".has_book_not_return")
     redirect_to registered_copies_path
   end
 
   def copies_not_available
     return if @book.copies_available_count.positive?
-    flash[:danger] = t ".copy_not_available"
+    flash[:warning] = t ".copy_not_available"
     redirect_to books_path
   end
 end

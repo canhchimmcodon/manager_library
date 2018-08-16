@@ -1,4 +1,7 @@
 = provide :title, t(".page_title")
 %h1= t ".page_title"
+%div
+  = paginate @comment_confirmations, theme: "twitter-bootstrap-4",
+    pagination_class: "pagination-sm"
 %ul.comment_confirmations
   = render partial: "comment_confirmation", collection: @comment_confirmations

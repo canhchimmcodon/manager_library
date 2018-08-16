@@ -6,7 +6,7 @@ class CardActivationsController < ApplicationController
       card = user.build_card
       process_for_card card, user
     else
-      flash[:danger] = t ".invalid_link"
+      flash[:warning] = t ".invalid_link"
     end
     redirect_to root_url
   end
@@ -16,7 +16,7 @@ class CardActivationsController < ApplicationController
       user.update_attributes card_activated: true
       flash[:success] = t ".card_activated"
     else
-      flash[:danger] = t ".failed_create_card"
+      flash[:warning] = t ".failed_create_card"
     end
   end
 end

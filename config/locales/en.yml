@@ -351,8 +351,10 @@ en:
       return: "Return this book"
       confirm: "Are you sure?"
     index:
-      page_title: "Registered Copies"
+      page_title: "Registered copies"
       no_card: "Register a card first."
+      return: "Return this book"
+      confirm: "Are you sure?"
     new:
       page_title: "Register book"
       not_exists: "Book not exists!"
@@ -493,3 +495,10 @@ en:
     english: "English"
     vietnamese: "Vietnamese"
     japanese: "Japanese"
+
+  tables:
+    headers:
+      copy_id: "Title"
+      registered_date: "Registered date"
+      borrowed_date: "Borrowed date"
+      expected_return_date: "Return date"
