@@ -23,6 +23,17 @@
  *= require form-wizard
  *= require social-share-button
  *= require toastr.min
+ *
+ *= require login_form/iconic/material-design-iconic-font
+ *= require login_form/animate/animate
+ *= require login_form/css-hamburgers/hamburgers
+ *= require login_form/animsition/animsition
+ *= require login_form/select2/select2
+ *= require login_form/daterangepicker/daterangepicker
+ *= require login_form/css/util
+ *= require login_form/css/main
+ *
+ *
  *= require_tree .
  *= require_self
  */

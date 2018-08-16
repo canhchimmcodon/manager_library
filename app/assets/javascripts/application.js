@@ -31,6 +31,13 @@
 //= require themefunction
 //= require toastr.min
 //
+//= require login_form/js/animsition
+//= require login_form/js/select2
+//= require login_form/js/moment
+//= require login_form/js/daterangepicker
+//= require login_form/js/countdowntime
+//= require login_form/js/main
+//
 //= require i18n
 //= require i18n.js
 //= require i18n/translations

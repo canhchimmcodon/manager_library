@@ -186,11 +186,21 @@ en:
     new:
       signup: "Sign up"
       create_account: "Create account"
+      type_password: "Type your password"
+      type_email: "Type your email"
+      or_signup_using: "Or Sign Up Using"
     create:
       message: "Check email to activate!"
     edit:
       edit: "Edit account"
       save: "Save"
+      back : "Back"
+      unhappy: "Unhappy?"
+      cancel: "Cancel my accout"
+      leave_blank: "(leave blank if you don't want to change it)"
+      need_current_password: "(we need your current password to confirm your changes)"
+      sure: "Are you sure?"
+      wait_confirmation: "Currently waiting confirmation for:"
     update:
       updated: "Information has been updated."
     destroy:
