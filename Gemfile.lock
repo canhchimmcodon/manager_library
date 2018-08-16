@@ -188,6 +188,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    oauth (0.5.4)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
@@ -203,9 +204,15 @@ GEM
       jwt (>= 1.5)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.5)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.5.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
+    omniauth-twitter (1.4.0)
+      omniauth-oauth (~> 1.1)
+      rack
     orm_adapter (0.5.0)
     parallel (1.12.1)
     parser (2.5.1.2)
@@ -279,6 +286,8 @@ GEM
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    social-share-button (1.1.0)
+      coffee-rails
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -346,6 +355,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
+  omniauth-twitter
   pg
   pry
   puma (~> 3.11)
@@ -353,6 +363,7 @@ DEPENDENCIES
   rubocop (~> 0.54.0)
   sass-rails (~> 5.0)
   selenium-webdriver
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

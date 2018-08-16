@@ -20,9 +20,8 @@
  *= require slick
  *= require color
  *= require style
- *
  *= require form-wizard
- *
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
