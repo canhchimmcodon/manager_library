@@ -1,0 +1,10 @@
+<% if flash.present? %>
+  <div id="flash">
+    <script>
+      <% flash.each do |key, value| %>
+        var $toastContent = $('<span><%= value %></span>');
+        toastr.<%= key %>($toastContent)
+      <% end %>
+    </script>
+  </div>
+<% end %>

@@ -1,1 +1,2 @@
 $('#record-<%= @comment.id %>').append('<%= j render "edit_form" %>');
+$("#flash").html('<%= j render partial: "flash_messages", flash: flash %>');

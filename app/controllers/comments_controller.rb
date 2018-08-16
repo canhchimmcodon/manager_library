@@ -21,11 +21,8 @@ class CommentsController < ApplicationController
 
     if @comment.save
       respond_to do |format|
-        format.html do
-          flash[:success] = t ".success_comment"
-          redirect_to @book
-        end
-        format.js
+        format.html
+        format.js {flash.now[:success] = t(".success_comment")}
       end
     end
   end
@@ -37,11 +34,8 @@ class CommentsController < ApplicationController
   def update
     if @comment.update_attributes(comment_params)
       respond_to do |format|
-        format.html do
-          flash[:success] = t ".updated"
-          redirect_to @book
-        end
-        format.js
+        format.html
+        format.js {flash.now[:success] = t(".updated")}
       end
     end
   end

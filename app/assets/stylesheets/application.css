@@ -22,6 +22,7 @@
  *= require style
  *= require form-wizard
  *= require social-share-button
+ *= require toastr.min
  *= require_tree .
  *= require_self
  */

@@ -417,6 +417,8 @@ ja:
     update:
       updated: "Comment has been confirmed."
       failed: "Confirmation failure."
+    destroy:
+      not_exists: "Comment not exists."
 
   notifications:
     notification:
@@ -432,7 +434,7 @@ ja:
   comments:
     create:
       failed_comment: "Comment failed!"
-      success_comment: "Comment successed!"
+      success_comment: "Thank you for your comment, waiting for confirmation."
     edit:
       edit: "Edit comment"
       save: "Save"
