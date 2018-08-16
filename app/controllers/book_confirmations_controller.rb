@@ -15,7 +15,6 @@ class BookConfirmationsController < ApplicationController
     else
       flash[:danger] = t ".failed"
     end
-    redirect_to root_url
   end
 
   def destroy
@@ -33,7 +32,7 @@ class BookConfirmationsController < ApplicationController
   def has_book_pending?
     @book_confirmations = RegisteredCopy.page(params[:page]).not_confirmed_yet
     return if @book_confirmations.present?
-    flash[:danger] = t ".no_book_pending_right_now"
+    flash[:info] = t ".no_book_pending_right_now"
     redirect_to root_url
   end
 

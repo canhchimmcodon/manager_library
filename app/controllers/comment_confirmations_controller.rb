@@ -23,7 +23,7 @@ class CommentConfirmationsController < ApplicationController
   def has_comment_pending?
     @comment_confirmations = Comment.page(params[:page]).not_confirmed_yet
     return if @comment_confirmations.present?
-    flash[:danger] = t ".no_comment_pending_right_now"
+    flash[:info] = t ".no_comment_pending_right_now"
     redirect_to root_url
   end
 

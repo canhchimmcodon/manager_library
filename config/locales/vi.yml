@@ -400,9 +400,11 @@ vi:
     update:
       updated: "Book has been confirmed."
       failed: "Confirmation failure."
+      noti_book_confirmed: "Book %{title} has been confirmed, \
+        now you can borrow."
     destroy:
       not_confirm: "Not confirmations for this book."
-      status_fail: "Set status fail"
+      noti_book_not_confirmed: "Book %{title} has been declined."
 
   comment_confirmations:
     comment_confirmation:
@@ -414,11 +416,8 @@ vi:
     update:
       updated: "Comment has been confirmed."
       failed: "Confirmation failure."
-      noti_book_confirmed: "Book %{title} has been confirmed, \
-        now you can borrow."
     destroy:
-      not_confirm: "Not confirmations for this book."
-      noti_book_not_confirmed: "Book %{title} has been declined."
+      not_exists: "Comment not exists."
 
   notifications:
     notification:
@@ -434,7 +433,7 @@ vi:
   comments:
     create:
       failed_comment: "Comment failed!"
-      success_comment: "Comment successed!"
+      success_comment: "Cảm ơn đã bình luận, đang chờ xác nhận."
     edit:
       edit: "Edit comment"
       save: "Save"

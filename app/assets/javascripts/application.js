@@ -29,6 +29,7 @@
 //= require fullcalendar
 //= require form-wizard
 //= require themefunction
+//= require toastr.min
 //
 //= require i18n
 //= require i18n.js

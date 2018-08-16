@@ -4,9 +4,7 @@
     = render "layouts/rails_default"
 
     %body>
+      = render partial: "flash_messages", flash: flash
       = render "layouts/header"
-      .container{style: "margin-top:0px;"}
-        - flash.each do |message_type, message|
-          %div{class: "alert alert-#{message_type}"}= message
       = yield
       = render "layouts/footer"
