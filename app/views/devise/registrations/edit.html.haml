@@ -1,0 +1,58 @@
+.limiter
+  .container-login100
+    %div(class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54")
+      %span(class="login100-form login100-form-title p-b-49")= t "users.edit.edit"
+
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div= t("users.edit.wait_confirmation") 
+        = resource.unconfirmed_email
+        
+      .login100-form
+        = form_for resource, as: resource_name, |
+          url: registration_path(resource_name), |
+          html: {method: :put} do |f| |
+          = devise_error_messages!
+          
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :email
+            = f.email_field :email, autofocus: true, autocomplete: "email",
+              class: "input100"
+
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :password
+            %br
+            %i= t("users.edit.leave_blank")
+            = f.password_field :password, autocomplete: "off",
+              class: "input100"
+
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :password_confirmation
+            = f.password_field :password_confirmation, autocomplete: "off",
+              class: "input100"
+
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :current_password
+            %br
+            %i= t("users.edit.need_current_password")
+            = f.password_field :current_password, autocomplete: "off",
+              class: "input100"
+
+          %br
+          %br
+          .container-login100-form-btn
+            .wrap-login100-form-btn
+              .login100-form-bgbtn
+              = f.submit I18n.t("users.edit.save"), class: "login100-form-btn"
+
+          %br
+          %div(class="flex-col-c p-t-150")
+            %span.label-input100= t("users.edit.unhappy")
+            %br
+            .container-login100-form-btn
+              .wrap-login100-form-btn
+                = button_to t("users.edit.cancel"), |
+                  registration_path(resource_name), |
+                  data: {confirm: t("users.edit.sure")}, method: :delete |
+          
+          %div(class="flex-col-c p-t-20")
+            = link_to t("users.edit.back"), :back, class: "txt2"

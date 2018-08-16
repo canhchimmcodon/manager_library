@@ -1,0 +1,54 @@
+.limiter
+  .container-login100
+    %div(class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54")
+      %span(class="login100-form login100-form-title p-b-49")= t ".login"
+        
+      .login100-form
+        = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :email
+            = f.email_field :email, autofocus: true, autocomplete: "email",
+               class: "input100", placeholder: t("users.new.type_email")
+                      
+          %div(class="wrap-input100 validate-input")
+            %span.label-input100= f.label :password
+            = f.password_field :password, autocomplete: "off",
+              class: "input100", placeholder: t("users.new.type_password")
+
+          %div
+            %br
+            - if devise_mapping.rememberable?
+              = f.check_box :remember_me
+              = f.label :remember_me
+
+          %div(class="text-right p-t-8 p-b-31")
+            - if devise_mapping.recoverable? && |
+              controller_name != "passwords" && |
+              controller_name != "registrations" |
+              = link_to t(".forgot_password"), new_password_path(resource_name)
+     				
+          .container-login100-form-btn
+            .wrap-login100-form-btn
+              .login100-form-bgbtn
+              = f.submit I18n.t("sessions.new.login"), class: "login100-form-btn"
+     
+          %div(class="txt1 text-center p-t-54 p-b-20")
+            = t("users.new.or_signup_using")
+
+          - if devise_mapping.omniauthable?
+            .flex-c-m
+              %a(href=user_facebook_omniauth_authorize_path |
+                class="login100-social-item bg1")
+                %i(class="fa fa-facebook")
+
+              %a(href=user_twitter_omniauth_authorize_path |
+                class="login100-social-item bg2")
+                %i(class="fa fa-twitter")
+     
+              %a(href=user_google_oauth2_omniauth_authorize_path |
+                class="login100-social-item bg3")
+                %i(class="fa fa-google")
+
+          %div(class="flex-col-c p-t-155")
+            - if devise_mapping.registerable? && controller_name != "registrations"
+              = link_to t(".sign_up"), new_registration_path(resource_name), class: "txt2"
