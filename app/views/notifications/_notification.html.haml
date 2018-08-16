@@ -1,6 +1,14 @@
-%li
-  = notification.content
-  = t ".timestamp",
-    time: time_ago_in_words(notification.created_at)
-  = link_to t(".delete"), notification, method: :delete,
-    data: {confirm: t(".confirm")}
+%div{class: "#{notification.read ? "notification-wrap" : "notification-wrap-unread"}"}
+  .row
+    .col-xs-12.col-sm-1.col-md-12.col-lg-1
+      = gravatar_for current_user, size: Settings.SIZE_IMAGE_OPTION_SMALL
+    .col-xs-12.col-sm-11.col-md-12.col-lg-11
+      .h3
+        = link_to_if(notification.notifiable_type.eql?(Book.name),
+            notification.content, book_path(id: notification.notifiable_id))
+      .h5
+        = t ".timestamp",
+            time: time_ago_in_words(notification.created_at)
+      .h5
+        = link_to t(".delete"), notification, method: :delete,
+            data: {confirm: t(".confirm")}

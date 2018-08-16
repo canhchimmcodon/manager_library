@@ -16,7 +16,7 @@ class BooksController < ApplicationController
     if @book.save
       flash[:info] = t ".success"
       add_notification_current_user t(".notification_book_created",
-        title: @book.title)
+        title: @book.title), Book.name, @book.id
       redirect_to books_path
     else
       render :new

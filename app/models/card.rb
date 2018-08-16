@@ -6,7 +6,6 @@ class Card < ApplicationRecord
   before_create :expired_time
 
   delegate :name, to: :user, prefix: true, allow_nil: true
-  delegate :id, to: :user, prefix: true, allow_nil: true
 
   def registered_copies_count
     registered_copies.count

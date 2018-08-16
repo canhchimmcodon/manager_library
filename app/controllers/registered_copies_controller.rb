@@ -20,9 +20,11 @@ class RegisteredCopiesController < ApplicationController
     if set_registered
       if @registered_copy.save
         add_notification_current_user t(".noti_book_registered_user",
-          title: @registered_copy.copy.book_title)
+          title: @registered_copy.copy.book_title),
+          Book.name, @registered_copy.copy.book_id
         add_notification_librarian_user t(".noti_book_registered_librarian",
-          name: current_user.name, title: @registered_copy.copy.book_title)
+          name: current_user.name, title: @registered_copy.copy.book_title),
+          Book.name, @registered_copy.copy.book_id
         flash[:info] = t ".success"
         redirect_to root_url
       else
@@ -38,9 +40,11 @@ class RegisteredCopiesController < ApplicationController
     if set_available
       @registered_copy.destroy
       add_notification_current_user t(".noti_book_returned_user",
-        title: @registered_copy.copy.book_title)
+        title: @registered_copy.copy.book_title),
+        Book.name, @registered_copy.copy.book_id
       add_notification_librarian_user t(".noti_book_returned_librarian",
-        name: current_user.name, title: @registered_copy.copy.book_title)
+        name: current_user.name, title: @registered_copy.copy.book_title),
+        Book.name, @registered_copy.copy.book_id
       flash[:success] = t ".book_returned"
       redirect_to root_url
     else
