@@ -291,6 +291,7 @@ vi:
       available_count: "Copies available: %{count}"
       id: "Id"
       status: "Status"
+      user: "Được đăng ký bởi người dùng"
     new:
       page_title: "Add new copy"
       add_button: "Add new copy"
@@ -409,16 +410,14 @@ vi:
       noti_book_not_confirmed: "Book %{title} has been declined."
 
   comment_confirmations:
-    comment_confirmation:
-      confirm: "Confirm"
-      confirm_text: "Are you sure to confirm this comment?"
     index:
-      page_title: "List of pending comments"
-      no_comment_pending_right_now: "No comment pending right now."
+      page_title: "Danh sách bình luận chờ xác nhận"
+      no_comment_pending_right_now: "Không có bình luận cần xác nhận bây giờ."
     update:
-      updated: "Comment has been confirmed."
+      updated: "Bình luận đã được xác nhận."
       failed: "Confirmation failure."
     destroy:
+      deleted: "Bình luận đã được xóa."
       not_exists: "Comment not exists."
 
   notifications:
@@ -481,3 +480,17 @@ vi:
       registered_date: "Ngày đăng ký"
       borrowed_date: "Ngày mượn"
       expected_return_date: "Ngày trả dự kiến"
+      user_id: "Người dùng"
+      book_id: "Sách"
+      created_at: "Bình luận lúc"
+      content: "Nội dung"
+      card_id: "Người dùng"
+      id: "Số hiệu"
+      status: "Trạng thái"
+
+  table_for:
+    table_for:
+      confirm: "Xác nhận"
+      confirm_text: "Bạn có chắc chắn xác nhận?"
+      delete: "Xóa"
+      confirm_delete: "Bạn có chắc chắn xóa?"

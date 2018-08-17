@@ -303,6 +303,7 @@ en:
       available_count: "Copies available: %{count}"
       id: "Id"
       status: "Status"
+      user: "Registered by user"
     new:
       page_title: "Add new copy"
       add_button: "Add new copy"
@@ -426,13 +427,6 @@ en:
       noti_book_not_confirmed: "Book %{title} has been declined."
 
   comment_confirmations:
-    comment_confirmation:
-      confirm: "Confirm"
-      confirm_text: "Are you sure to confirm this comment?"
-      user: "User: "
-      book: "Book: "
-      created_at: "Commented at: "
-      content: "Content: "
     index:
       page_title: "List of pending comments"
       no_comment_pending_right_now: "No comment pending right now."
@@ -440,6 +434,7 @@ en:
       updated: "Comment has been confirmed."
       failed: "Confirmation failure."
     destroy:
+      deleted: "Comment has been deleted."
       not_exists: "Comment not exists."
 
   notifications:
@@ -502,3 +497,17 @@ en:
       registered_date: "Registered date"
       borrowed_date: "Borrowed date"
       expected_return_date: "Return date"
+      user_id: "User"
+      book_id: "Book"
+      created_at: "Commented at"
+      content: "Content"
+      card_id: "User"
+      id: "ID"
+      status: "Status"
+
+  table_for:
+    table_for:
+      confirm: "Confirm"
+      confirm_text: "Are you sure to confirm?"
+      delete: "Delete"
+      confirm_delete: "Are you sure to delete?"

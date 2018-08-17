@@ -15,6 +15,7 @@ class CommentConfirmationsController < ApplicationController
 
   def destroy
     @comment_confirmation.destroy
+    flash[:success] = t ".deleted"
     redirect_back fallback_location: root_path
   end
 

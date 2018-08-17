@@ -3,5 +3,22 @@
 %div
   = paginate @comment_confirmations, theme: "twitter-bootstrap-4",
     pagination_class: "pagination-sm"
-%ul.comment_confirmations
-  = render partial: "comment_confirmation", collection: @comment_confirmations
+
+= table_for @comment_confirmations,
+  table_html: {class: "table table-bordered", cellpadding: 2},
+  header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
+  default: column.name.to_s.titleize)} do |table|
+  - table.column :user_id do |comment_confirmation|
+    = link_to "#{comment_confirmation.user.name}",
+      user_path(id: comment_confirmation.user_id)
+  - table.column :book_id do |comment_confirmation|
+    = link_to "#{comment_confirmation.book.title}",
+      book_path(id: comment_confirmation.book_id)
+  - table.column :created_at
+  - table.column :content
+  - table.column header: false do |comment_confirmation|
+    = link_to t(".confirm"), comment_confirmation_path(comment_confirmation),
+      method: :put, data: {confirm: t(".confirm_text")}
+  - table.column header: false do |comment_confirmation|
+    = link_to t(".delete"), comment_confirmation_path(comment_confirmation),
+      method: :delete, data: {confirm: t(".confirm_delete")}
