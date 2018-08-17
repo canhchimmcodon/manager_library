@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: %i(destroy)
 
   def index
-    @users = User.page(params[:page]).all_user
+    @users = User.page(params[:page])
   end
 
   def new
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find_by id: params[:id]
+    @user = User.friendly.find params[:id]
     return if @user
     flash[:warning] = t ".notfound"
     redirect_to root_url

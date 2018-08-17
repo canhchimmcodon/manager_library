@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend FriendlyId
   attr_accessor :remember_token, :card_activation_token, :reset_token
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
@@ -20,6 +21,8 @@ class User < ApplicationRecord
   delegate :id, to: :card, prefix: true, allow_nil: true
   delegate :issued_date, to: :card, prefix: true, allow_nil: true
   delegate :expired_date, to: :card, prefix: true, allow_nil: true
+
+  friendly_id :name, use: :slugged
 
   class << self
     def from_omniauth auth
