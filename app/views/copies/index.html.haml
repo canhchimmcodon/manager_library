@@ -1,6 +1,5 @@
 = provide :title, t(".page_title", book: @book.title)
 %h1= t(".page_title", book: @book.title)
-%h3= t(".available_count", count: @book.copies_available_count)
 %div
   .add-new-book
     - if user_signed_in? && current_user.librarian?
@@ -10,16 +9,22 @@
   = paginate @copies, theme: "twitter-bootstrap-4",
     pagination_class: "pagination-sm"
 
-  %div(class="rh rh-100 section-booking")
-    .col-lg-1
-      = t ".id"
-    .col-lg-11
-      = t ".status"
-    %br
-    %br
-    .container
-      .row
-        = render @copies
+  %h3= t(".available_count", count: @book.copies_available_count)
+
+  = table_for @copies,
+  table_html: {class: "table table-bordered", cellpadding: 2},
+  header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
+  default: column.name.to_s.titleize)} do |table|
+    - table.column :id
+    - table.column :status
+    - table.column header: t(".user") do |copy|
+      - if copy.registered_copy.present?
+        = link_to "#{copy.registering_user.name}",
+          user_path(id: copy.registering_user.id)
+    - if current_user.librarian?
+      - table.column header: false do |copy|
+        = link_to t(".delete"), [@book, copy], method: :delete,
+          data: {confirm: t(".confirm")}
 
   #back_to_top.active
     %i(class="fa fa-angle-up" aria-hidden="true")
