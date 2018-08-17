@@ -51,14 +51,14 @@ class CommentsController < ApplicationController
   def find_book
     @book = Book.find_by id: params[:book_id]
     return if @book
-    flash[:danger] = t ".not_found_book"
+    flash[:warning] = t ".not_found_book"
     redirect_back fallback_location: root_path
   end
 
   def find_comment
     @comment = Comment.find_by id: params[:id]
     return if @comment
-    flash[:danger] = t ".not_found_comment"
+    flash[:warning] = t ".not_found_comment"
     redirect_back fallback_location: root_path
   end
 

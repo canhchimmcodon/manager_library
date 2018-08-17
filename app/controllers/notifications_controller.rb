@@ -21,7 +21,7 @@ class NotificationsController < ApplicationController
   def find_notification
     @notification = Notification.find_by id: params[:id]
     return if @notification
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 

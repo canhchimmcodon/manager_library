@@ -8,7 +8,7 @@ class CommentConfirmationsController < ApplicationController
     if @comment_confirmation.update_attributes(accepted: true)
       flash[:success] = t ".updated"
     else
-      flash[:danger] = t ".failed"
+      flash[:warning] = t ".failed"
     end
     redirect_back fallback_location: root_path
   end
@@ -30,7 +30,7 @@ class CommentConfirmationsController < ApplicationController
   def find_comment
     @comment_confirmation = Comment.find_by id: params[:id]
     return if @comment_confirmation
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 end

@@ -7,7 +7,7 @@ class CopiesController < ApplicationController
     @book = Book.find(params[:book_id])
     @copies = @book.copies.page(params[:page])
     return if @copies
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 
@@ -49,7 +49,7 @@ class CopiesController < ApplicationController
   def find_copy
     @copy = Copy.find_by id: params[:id]
     return if @copy
-    flash[:danger] = t ".not_exists"
+    flash[:warning] = t ".not_exists"
     redirect_to root_url
   end
 
