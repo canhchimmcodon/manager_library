@@ -1,18 +1,20 @@
 = provide :title, t(".page_title")
-%h1= t ".page_title"
-%div{class: "container pagination justify-content-center"}
-  = paginate @registered_copies, theme: "twitter-bootstrap-4",
-    pagination_class: "pagination-sm"
+.text-center
+  %h1= t ".page_title"
+  %div{class: "container pagination justify-content-center"}
+    = paginate @registered_copies, theme: "twitter-bootstrap-4",
+      pagination_class: "pagination-sm"
 
-= table_for @registered_copies,
-  table_html: {class: "table table-bordered", cellpadding: 2},
-  header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
-  default: column.name.to_s.titleize)} do |table|
-  - table.column :copy_id do |registered_copy|
-    = link_to "#{registered_copy.copy.book_title}",
-      book_path(id: registered_copy.copy.book_id)
-  - table.column :registered_date
-  - table.column :borrowed_date
-  - table.column :expected_return_date
-  - table.column data: t(".return"), header: false, link_method: :delete,
-    link_confirm: t(".confirm")
+.container
+  = table_for @registered_copies,
+    table_html: {class: "table table-bordered", cellpadding: 2},
+    header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
+    default: column.name.to_s.titleize)} do |table|
+    - table.column :copy_id do |registered_copy|
+      = link_to "#{registered_copy.copy.book_title}",
+        book_path(id: registered_copy.copy.book_id)
+    - table.column :registered_date
+    - table.column :borrowed_date
+    - table.column :expected_return_date
+    - table.column data: t(".return"), header: false, link_method: :delete,
+      link_confirm: t(".confirm")

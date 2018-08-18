@@ -230,24 +230,26 @@ vi:
 
   _header:
     login: "Login"
-    logout: "Logout"
+    logout: "Đăng xuất"
     user: "User"
     account: "Account"
     profile: "Profile"
     setting: "Setting"
     borrowed_book: "Borrowed book"
-    confirm: "Confirm"
-    comment_confirm: "Confirm comments"
-    book_confirm: "Confirm books"
-    notifications: "Notifications"
+    confirm: "Xác nhận"
+    comment_confirm: "Bình luận"
+    book_confirm: "Sách"
+    notifications: "Thông báo"
 
   books:
     index:
       page_title: "Book list"
-      add_book: "Add new book"
+      add_book: "Thêm sách mới"
       quote: "We read to know we're not alone."
       search: "Tìm kiếm"
       type_book_title: "Nhập tiêu đề sách"
+      sort_name: "Sắp xếp theo tên"
+      sort_price: "Sắp xếp theo giá"
     new:
       page_title: "Add new book"
       add_button: "Add new book"

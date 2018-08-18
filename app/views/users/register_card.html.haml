@@ -1,8 +1,10 @@
-= form_for current_user, url: register_path do |f|
-  %h3= t ".page_title"
-  = f.text_area :description, size: Settings.SIZE_TERMS_SERVICE,
-    readonly: true, class: "textarea"
-  = f.label :terms_of_service, class: "checkbox inline" do
-    = f.check_box :terms_of_service
-    %span= t ".agree"
-  = f.submit t(".register"), class: "btn btn-primary"
+.container-xs-card
+  = form_for current_user, url: register_path do |f|
+    %h3= t ".page_title"
+    %br
+    = f.text_area :description, size: Settings.SIZE_TERMS_SERVICE,
+      readonly: true, class: "textarea"
+    = f.label :terms_of_service, class: "checkbox inline" do
+      = f.check_box :terms_of_service
+      %span= t ".agree"
+    = f.submit t(".register"), class: "btn btn-primary"

@@ -1,9 +1,10 @@
 = provide :title, t(".index")
-%h1= t ".index"
+.container
+  .text-center
+    %h1= t ".index"
+    %div{class: "container pagination justify-content-center"}
+      = paginate @users, theme: "twitter-bootstrap-4",
+        pagination_class: "pagination-sm"
 
-%div{class: "container pagination justify-content-center"}
-  = paginate @users, theme: "twitter-bootstrap-4", 
-    pagination_class: "pagination-sm"
-
-%ul.users
-  = render @users
+  %ul.users
+    = render @users

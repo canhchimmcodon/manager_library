@@ -53,6 +53,7 @@
 
 .register-card a {
   color: $blue;
+  font-size: 32px;
 }
 
 .users {
@@ -95,7 +96,7 @@
 .comment-form-text {
   overflow: hidden;
   padding: 12px 0px 10px 0px;
-  width: 80%;
+  width: 85%;
 }
 
 .comment-form-submit {
@@ -108,20 +109,28 @@
   border-color: $brown;
 }
 
+.comment-form-advance {
+  float: right;
+  padding: 20px 20px 20px 0px;
+}
+
+.comment-form-advance .btn-primary {
+  background-color: $brown;
+  border-color: $brown;
+}
+
 .comment-form-text-home {
   overflow: hidden;
   padding: 12px 0px 10px 0px;
-  width: 100%;
+  width: 90%;
 }
 
 .comment-form-submit-home {
+  float: right;
   padding: 20px 20px 20px 0px;
 }
 
 .comment-form-submit-home .btn-primary {
-  height: 100px;
-  width: 200px;
-  font-size: 30px;
   background-color: $brown;
   border-color: $brown;
 }
@@ -235,6 +244,11 @@
   padding-top: 70px;
 }
 
+.container-xs-card {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+
 .notification-wrap {
   border: 1px solid $notification-border;
   border-radius: 3px;
@@ -257,4 +271,17 @@
   float: left;
   margin-right: 10px;
   width: 100%;
+}
+
+.user-wrap {
+  border: 1px solid $notification-border;
+  border-radius: 3px;
+  padding: 15px;
+  background: $white;
+  float: left;
+  width: 100%;
+}
+
+.dropdown-nav {
+  min-width: 75px !important;
 }

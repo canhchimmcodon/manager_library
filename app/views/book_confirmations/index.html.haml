@@ -1,23 +1,26 @@
 = provide :title, t(".page_title")
-%h1= t ".page_title"
-%div
-  = paginate @book_confirmations, theme: "twitter-bootstrap-4",
-    pagination_class: "pagination-sm"
+.text-center
+  %h1= t ".page_title"
+  %div
+    = paginate @book_confirmations, theme: "twitter-bootstrap-4",
+      pagination_class: "pagination-sm"
+  %br
 
-= table_for @book_confirmations,
-  table_html: {class: "table table-bordered", cellpadding: 2},
-  header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
-  default: column.name.to_s.titleize)} do |table|
-  - table.column :card_id do |book_confirmation|
-    = link_to "#{book_confirmation.card.user_name}",
-      user_path(id: book_confirmation.card.user_id)
-  - table.column :copy_id do |book_confirmation|
-    = link_to "#{book_confirmation.copy.book_title}",
-      book_path(id: book_confirmation.copy.book_id)
-  - table.column :registered_date
-  - table.column header: false do |book_confirmation|
-    = link_to t(".confirm"), book_confirmation_path(book_confirmation),
-      method: :put, data: {confirm: t(".confirm_text")}
-  - table.column header: false do |book_confirmation|
-    = link_to t(".delete"), book_confirmation_path(book_confirmation),
-      method: :delete, data: {confirm: t(".confirm_delete")}
+.container
+  = table_for @book_confirmations,
+    table_html: {class: "table table-bordered", cellpadding: 2},
+    header: lambda {|column| t("tables.headers.#{column.name.to_s.underscore}",
+    default: column.name.to_s.titleize)} do |table|
+    - table.column :card_id do |book_confirmation|
+      = link_to "#{book_confirmation.card.user_name}",
+        user_path(id: book_confirmation.card.user_id)
+    - table.column :copy_id do |book_confirmation|
+      = link_to "#{book_confirmation.copy.book_title}",
+        book_path(id: book_confirmation.copy.book_id)
+    - table.column :registered_date
+    - table.column header: false do |book_confirmation|
+      = link_to t(".confirm"), book_confirmation_path(book_confirmation),
+        method: :put, data: {confirm: t(".confirm_text")}
+    - table.column header: false do |book_confirmation|
+      = link_to t(".delete"), book_confirmation_path(book_confirmation),
+        method: :delete, data: {confirm: t(".confirm_delete")}
