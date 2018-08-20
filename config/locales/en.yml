@@ -247,8 +247,8 @@ en:
     setting: "Setting"
     borrowed_book: "Borrowed book"
     confirm: "Confirm"
-    comment_confirm: "Confirm comments"
-    book_confirm: "Confirm books"
+    comment_confirm: "Comments"
+    book_confirm: "Books"
     notifications: "Notifications"
 
   books:
@@ -258,6 +258,8 @@ en:
       quote: "We read to know we're not alone."
       search: "Search"
       type_book_title: "Type book's title you want"
+      sort_name: "Sort by name"
+      sort_price: "Sort by price"
     new:
       page_title: "Add new book"
       add_button: "Add new book"

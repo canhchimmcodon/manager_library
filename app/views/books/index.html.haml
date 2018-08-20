@@ -4,8 +4,10 @@
       .row
         .comment-form-x
           = form_tag books_path, method: :get do
+            .comment-form-advance
+              = image_tag Settings.IMAGE_ADVANCE, class: "btn btn-primary", data: {toggle: "collapse", target: "#advance-search"}
             .comment-form-submit
-              = submit_tag(t(".search"), class: "btn btn-primary")
+              = image_submit_tag Settings.IMAGE_SEARCH, class: "btn btn-primary", title: t(".search")
             .comment-form-text
               = text_field_tag :search, params[:search],
                 class: "form-control", placeholder: t(".type_book_title")
@@ -13,11 +15,34 @@
   - if user_signed_in? && current_user.librarian?
     .button-add-new-book
       = link_to t(".add_book"), new_book_path, class: "btn btn-primary"
-  %div
+
+  .container
+    #advance-search.collapse
+      = search_form_for @search, class: "form-inline" do |f|
+        %div(class="form-group")
+          = f.label :title_cont
+          = f.text_field :title_cont, class: "form-control"
+          %br
+          = f.label :title_start
+          = f.search_field :title_start, class: "form-control"
+          %br
+          = f.label :price_lteq
+          = f.text_field :price_lteq, class: "form-control"
+          %br
+          = f.label :price_gteq
+          = f.text_field :price_gteq, class: "form-control"
+          %br
+          = f.submit t(".search"), class: "btn btn-primary"
+
+  .container
+    %br
+    .li= content_tag :th, sort_link(@search, :title, t(".sort_name"))
+    .li= content_tag :th, sort_link(@search, :price, t(".sort_price"))
+
+  .container
     = paginate @books, theme: "twitter-bootstrap-4",
       pagination_class: "pagination-sm"
 
-  %div
   %div(class="rh rh-100 section-booking")
     .container
       .row

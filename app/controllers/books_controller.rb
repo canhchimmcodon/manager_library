@@ -4,7 +4,8 @@ class BooksController < ApplicationController
   before_action :book_support, only: %i(new edit create)
 
   def index
-    @books = Book.book_by_name(params[:search]).page(params[:page]).book_info
+    @search = Book.search(params[:q])
+    @books = @search.result.page(params[:page])
   end
 
   def new

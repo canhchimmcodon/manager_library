@@ -248,6 +248,8 @@ ja:
       quote: "We read to know we're not alone."
       search: 探索
       type_book_title: "Type book's title you want"
+      sort_name: 名前で順に並べる
+      sort_price: 価格で並べ替える
     new:
       page_title: 新しい本を追加する
       add_button: 新しい本を追加する
@@ -338,12 +340,12 @@ ja:
 
   registered_copies:
     registered_copy:
-      return: "Return this book"
+      return: この書籍を返す
       confirm: 本気ですか？
     index:
       page_title: "Registered copies"
-      no_card: "Register a card first."
-      return: "Return this book"
+      no_card: カードを登録してください。
+      return: この書籍を返す
       confirm: 本気ですか？
     new:
       page_title: "Register book"
@@ -352,7 +354,7 @@ ja:
       issued_date: "Card issued date: "
       expired_date: "Card expired date: "
       available_count: "Copies available for this book: "
-      no_card: "Register a card first."
+      no_card: カードを登録してください。
       title: "Title: "
       publisher: "Publisher: "
       category: "Category: "
@@ -415,10 +417,10 @@ ja:
       page_title: "List of pending comments"
       no_comment_pending_right_now: "No comment pending right now."
     update:
-      updated: "Comment has been confirmed."
+      updated: コメントが確認されました。
       failed: "Confirmation failure."
     destroy:
-      deleted: "Comment has been deleted."
+      deleted: コメントは削除されました。
       not_exists: "Comment not exists."
 
   notifications:
